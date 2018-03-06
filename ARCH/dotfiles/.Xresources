@@ -11,6 +11,9 @@ XTerm*Foreground: white
 !! WINDOW !!
 !XTerm*BorderWidth: 0
 
+!! FONT !!
+XTerm*faceName: DejaVuSansMono Nerd Font:style=Book:size=8
+!!XTerm*faceName: TerminessTTF NF:style=Regular:antialias=true:hinting=true:autohint=true:size=10
 
 
 !!!!!!!!!!! URXVT !!!!!!!!!!!!!!!!
