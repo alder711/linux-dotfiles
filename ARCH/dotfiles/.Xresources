@@ -1,0 +1,29 @@
+
+
+!!!!!!!!!!! XTERM !!!!!!!!!!!!!!!!
+XTerm*renderFont: true
+
+!! COLOR !!
+!XTerm*Background: #220128
+XTerm*Background: black
+XTerm*Foreground: white
+
+!! WINDOW !!
+!XTerm*BorderWidth: 0
+
+
+
+!!!!!!!!!!! URXVT !!!!!!!!!!!!!!!!
+
+!! COLOR !!
+URxvt*background: black
+URxvt*foreground: white
+
+!!!!!!!!!!!!!! ROFI !!!!!!!!!!!!!!
+!color for certain lines
+rofi.color-window: #222,#222
+!                  bg   fg   bgalt hlbg hlfg
+rofi.color-normal: #111,#999,#444
+!rofi.color-active: #333,#333
+!rofi.bg: #333
+!rofi.fg: #666

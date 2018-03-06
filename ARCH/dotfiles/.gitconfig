@@ -1,0 +1,5 @@
+[user]
+	name = trevorbautista
+	email = trevorbautista@gmail.com
+[http]
+	sslVerify = false

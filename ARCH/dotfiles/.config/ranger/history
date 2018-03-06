@@ -1,0 +1,9 @@
+delete
+
+rename neofetch
+set show_hidden=true
+cut
+set show_hidden true
+copy
+mkdir dotfiles
+paste

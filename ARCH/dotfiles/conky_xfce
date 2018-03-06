@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $(pgrep -x conky) == "" ]]
+then
+	echo "Starting Conky for XFCE"
+	conky -c /home/trevorbautista/.config/conky/conky_main_stats_xfce &
+else
+	echo "Conky already running for XFCE"
+fi
+
+exit 0
