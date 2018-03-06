@@ -38,6 +38,10 @@ exec feh --bg-scale /usr/share/backgrounds/background.png
 # keybind to lock immediately
 bindsym Control+$mod+Delete exec xautolock -locknow
 
+# keybind title toggle
+bindsym $mod+b border toggle
+
+
 # window gaps (for i3-gaps)
 #gaps inner 10
 #gaps outer 0
@@ -79,10 +83,11 @@ exec sleep 5 && ~/.config/conky/startup_i3.sh
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xterm #i3-sensible-terminal
+
 
 # screenshot key
-bindsym --release Print exec gscreenshot
+bindsym --release Print exec $HOME/.local/bin/gscreenshot
 
 # kill focused window
 #bindsym $mod+Shift+q kill

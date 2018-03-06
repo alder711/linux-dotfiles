@@ -60,9 +60,6 @@ else
 	source /home/trevorbautista/.antigen/bundles/bhilburn/powerlevel9k/powerlevel9k.zsh-theme # Ownership of /home/trevorbautista/.antigen/bundles: root:trevorbautista
 	antigen theme bhilburn/powerlevel9k powerlevel9k
 
-	# Apply Antigen settings
-	antigen apply
-
 
 	# POWERLEVEL9k prompt setup
 	POWERLEVEL9K_MODE='nerdfont-complete'
@@ -102,7 +99,7 @@ else
 	POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'			#time format
 	POWERLEVEL9K_SHORTEN_DIR_LENGTH=1			#number of directories to leave at end
 	POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle" 	#strategy of truncation
-	POWERLEVEL9K_SHORTEN_DELIMITER=".."			#truncate delimiter
+	POWERLEVEL9K_SHORTEN_DELIMITER="^"			#truncate delimiter
 	POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{052} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{black}"
 	#POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{blue} $(print_icon 'HOME_ICON') %F{black}"
 	
@@ -110,6 +107,8 @@ else
 	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
 	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 	
+	# Apply Antigen settings
+	antigen apply
 
 fi
 
