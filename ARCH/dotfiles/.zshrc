@@ -163,6 +163,8 @@ alias ls='ls --color=auto'
 alias multimc=multimc5
 alias chirp="sudo chirpw"
 alias ltspice="/usr/bin/wine '/home/trevorbautista/.wine/drive_c/Program Files/LTspiceXVII/XVIIx64.exe'"
+alias su="su-p"
+alias sudo="sudo -E"
 
 
 
