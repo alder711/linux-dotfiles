@@ -1,0 +1,26 @@
+
+
+!!!!!!!!!!! XTERM !!!!!!!!!!!!!!!!
+XTerm*renderFont: true
+
+!! COLOR !!
+!XTerm*Background: #220128
+XTerm*Background: black
+XTerm*Foreground: white
+
+!! WINDOW !!
+!XTerm*BorderWidth: 0
+
+
+
+!!!!!!!!!!! UXTERM !!!!!!!!!!!!!!
+
+!! COLOR !!
+UXTerm*Background: black
+UXTerm*Foreground: white
+
+
+!!!!!!!!!!!!! ROFI !!!!!!!!!!!!!!
+rofi.color-window: #222,#222
+!                  bg   fg   bgalt hlbg hlfg
+rofi.color-normal: #111,#999,#444,#5b84ff,#222

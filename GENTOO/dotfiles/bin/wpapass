@@ -1,0 +1,7 @@
+#!/bin/bash
+# This script generates a hashed password for WPA-PEAP
+# networks using MSCHAPv2 phase2 authentication.
+
+echo "Enter password:"
+read -s PASS
+echo -n "$PASS" | iconv -t UTF-16LE | openssl md4

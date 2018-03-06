@@ -1,0 +1,463 @@
+#!/usr/bin/env bash
+#
+# This file is used to switch between wifi profiles that are
+# configured in /etc/wpa_supplicant/ where each profile file
+# takes the form 
+#
+# <SSID>.conf
+#
+# where <SSID> is the name of the network to connect to.
+#
+# This script can also be used to connect to VPNs (if OpenVPN
+# is installed).
+#
+# Created by Trevor Bautista on 03 March 2018
+#
+# Version 0.1 as of 03 March 2018
+###############################################################
+
+DHCP_CLIENT="dhclient"
+WPA_SUPPLICANT_CONF_DIR="/etc/wpa_supplicant"
+WPA_SUPPLICANT_CONTROL_SOCKET="/var/run/wpa_supplicant"
+WIFI_INTERFACE="wlan0"
+WIRED_INTERFACE="eth0"
+OPENVPN_CONFIG="/home/trevorbautista/Trevor_Gentoo_LP_client.ovpn"
+LOG="/dev/null"
+
+
+
+# WPA_PRECURSOR()
+# what to put in added WiFi profiles preceding network information
+WPA_PRECURSOR()
+{
+	echo "
+# Make this file writable for wpa_gui / wpa_cli
+update_config=1
+
+
+# Allow users in the 'wheel' group to control wpa_supplicant
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel
+
+
+# defined in IEEE Std 802.1X-2010.
+eapol_version=1
+
+
+# Normally, there is no need to disable this.
+fast_reauth=1
+"
+}
+
+
+
+
+# usage()
+# prints program usage
+usage()
+{
+	echo "$0 [OPTION] [SUBOPTION(S)]
+
+	Manages wired, wireless, and OpenVPN connections using wpa_supplicant, openvpn, and dhclient/ 
+	dhcpcd. There are different options that can be invoked with corresponding suboptions, 
+	categorized below.
+
+	OPTIONS
+
+	  list			list all available wireless profiles for wpa_supplicant
+
+	  scan			scan for available WiFi hotspots
+	
+	  connect		used to connect to a conection
+	  
+	    wifi <PROFILE>	used to connect to wireless profile
+	    wire		used to connect to wired connection
+	    openvpn 		used to connect to OpenVPN server, if no options given, will
+	    			connect using default config file as shared
+	      
+	      direct [<CONFIG>] connect to OpenVPN server without sharing network interfaces,
+	      			connects to default OpenVPN server if no config file given
+	      shared [<CONFIG>] connect to OpenVPN server sharing network interfaces,
+	      			connects to default OpenVPN server if no config file given
+	  
+	  stop			used to stop certain connections
+
+	    all			stop all net-related processes
+	    wifi		stop wifi processes
+	    wire		stop wired processes
+	    openvpn		stop openvpn processes
+
+	  add			used to add a WiFi profile to wpa_supplicant
+
+	    psk <SSID>		add a WiFi network with SSID <SSID> and password from prompt
+
+	  remove <SSID>		remove a WiFi network with SSID <SSID> from wpa_supplicant
+
+"
+}
+	  
+
+
+
+#####################################################
+################## QUERY FUNCTIONS ##################
+#####################################################
+
+# sanity_check()
+# checks if all necessary programs are installed
+sanity_check()
+{
+	# check if run as root
+	if ! [ $(id -u) = 0 ]; then
+		echo "Please run as root." | tee -a "$LOG"
+		echo "Stopping." | tee -a "$LOG"
+		exit 1
+	fi
+
+	NOT_INSTALLED=""
+	# check program commands with bash builtin 'command'
+	if [ "$DHCP_CLIENT" = "dhcpcd" ]; then
+		command -v dhcpcd  &>"$LOG" || NOT_INSTALLED="$NOT_INSTALLED dhcpcd"
+	elif [ "$DHCP_CLIENT" = "dhclient" ]; then
+		command -v dhclient  &>"$LOG" || NOT_INSTALLED="$NOT_INSTALLED dhclient"
+	else
+		echo "Invalid DHCP client. Check config. Stopping." | tee -a "$LOG"
+		exit 1
+	fi
+	command -v openvpn &>"$LOG" || NOT_INSTALLED="openvpn"
+	command -v wpa_supplicant &>"$LOG" || NOT_INSTALLED="$NOT_INSTALLED wpa_supplicant"
+	command -v screen | &>"$LOG" || NOT_INSTALLED="$NOT_INSTALLED screen"
+	command -v ip &>"$LOG" || NOT_INSTALLED="$NOT_INSTALLED ip"
+	command -v iwlist &>"$LOG" || NOT_INSTALLED="$NOT_INSTALLED iwlist"
+
+	# exit if at least one program not installed
+	if [ ! -z $NOT_INSTALLED ]; then
+		for program_name in $NOT_INSTALLED; do
+			echo "The program '$program_name' is currently not found on the system." | tee -a "$LOG"
+		done
+		echo | tee -a "$LOG"
+		echo "Please install the necessary packages." | tee -a "$LOG"
+		echo "Stopping." | tee -a "$LOG"
+		exit 1
+	fi
+
+	# check if wpa_supplicant directory exists
+	if [ ! -d $WPA_SUPPLICANT_CONF_DIR ]; then
+		echo "wpa_supplicant configuration directory '$WPA_SUPPLICANT_CONF_DIR' not found." | tee -a "$LOG"
+		echo "Stopping." | tee -a "$LOG"
+		exit 1
+	fi
+}
+
+
+
+
+# list_profiles()
+# lists available wifi profiles
+list_profiles()
+{
+	# store available profiles into array
+	#mapfile -t WIFI_PROFILES < <(ls "$WPA_SUPPLICANT_CONF_DIR" | grep -e ".*.conf" | awk -F".conf" '{print $1}' | awk -F"wpa_supplicant" '{print $1}') | tee -a "$LOG"
+	OLD_IFS=$IFS
+	while IFS= read -r line; do
+		WIFI_PROFILES+=("$line")
+	done < <(ls "$WPA_SUPPLICANT_CONF_DIR" | grep -e ".*.conf" | awk -F".conf" '{print $1}' | awk '!/^wpa_supplicant$/')
+	IFS=$OLD_IFS
+	# print list of profiles
+	echo "Available WiFi Profiles:" | tee -a "$LOG"
+	echo "-----" | tee -a "$LOG"
+	for (( i=0 ; i<${#WIFI_PROFILES[@]}; i++ )); do echo ${WIFI_PROFILES[i]} | tee -a "$LOG"; done
+	echo "-----" | tee -a "$LOG"
+}
+
+
+
+# scan_hotspots()
+# scans and lists available wifi hotspots
+scan_hotspots()
+{
+	# scan
+	HOTSPOTS=$(iwlist wlan0 scan | grep -i ssid | sed s/ESSID://)
+	# print
+	echo "Available Hotspots:" | tee -a "$LOG"
+	for ssid in "$HOTSPOTS"; do echo "$ssid" | tee -a "$LOG"; done
+}
+
+
+########################################################
+################# CONNECTION FUNCTIONS #################
+########################################################
+
+# switch_profiles()
+# $1: wifi profile name (without '.conf') to attempt to switch to
+switch_profiles()
+{
+	# if no arguments given,
+	if [ -z "$1" ]; then
+		echo "No wifi profile given, attempting to use $WPA_SUPPLICANT_CONF_DIR/wpa_supplicant.conf..." | tee -a "$LOG"
+		# if default file does not exist,
+		if [ ! -f "$WPA_SUPPLICANT_CONF_DIR/wpa_supplicant.conf" ]; then
+			# err
+			echo "Please specify wifi profile or supply a valid default config file." | tee -a "$LOG"
+			exit 1
+		fi
+	fi
+	# kill wifi processes
+	kill_wifi
+	# start wifi profile
+	ip link set dev $WIFI_INTERFACE up | tee -a "$LOG"
+	echo "Attempting to connect to '$1'..." | tee -a "$LOG"
+	# remove wpa_supplicant socket
+	rm -f $WPA_SUPPLICANT_CONTROL_SOCKET/$WIFI_INTERFACE | tee -a "$LOG"
+	# if there were no arguments given,
+	if [ -z "$1" ]; then
+		# attempt to start new wpa_supplicant and $DHCP_CLIENT process with default config
+		wpa_supplicant -B -i $WIFI_INTERFACE -c "$WPA_SUPPLICANT_CONF_DIR/wpa_supplicant.conf" | tee -a "$LOG" && \
+		echo "Successful WiFi connection." | tee -a "$LOG" || \
+		echo "Unsuccessful WiFi connection." | tee -a "$LOG" && \
+		exit 1
+	# if arguments given,
+	else
+		# attempt to start new wpa_supplicant and $DHCP_CLIENT process
+		wpa_supplicant -B -i $WIFI_INTERFACE -c "$WPA_SUPPLICANT_CONF_DIR/$1.conf" | tee -a "$LOG" && \
+		$DHCP_CLIENT $WIFI_INTERFACE | tee -a "$LOG" && \
+		echo "Successful connection to  '$1'." | tee -a "$LOG" || \
+		echo "Unsuccessful connection to '$1'." | tee -a "$LOG" && \
+		exit 1
+	fi
+}
+
+
+# connect_openvpn()
+# connects to openvpn server using preset config file
+connect_openvpn()
+{
+	# if no argument given or 'shared' with nothing after,
+	if [ -z "$1" ] || ( [ "$1" = "shared" ] && [ -z $2 ] ); then
+		# try to connect to default OpenVPN server (shared)
+		echo "Attempting to connect to OpenVPN server using config '$OPENVPN_CONFIG' sharing interfaces..." | tee -a "$LOG" && \
+		screen -dmS OpenVPN openvpn --route-nopull --config "$OPENVPN_CONFIG" | tee -a "$LOG" && \
+		echo "Done. Access OpenVPN session by using 'screen -x OpenVPN'." | tee -a "$LOG" || \
+		echo "Failed to initiate OpenVPN connection. Stopping." | tee -a "$LOG" && \
+		exit 1
+	# if 'shared' with given config,
+	elif [ "$1" = "shared" ] && ! [ -z $2 ]; then
+		# try to connect to custom OpenVPN server (shared)
+		echo "Attempting to connect to OpenVPN server using config '$2' sharing interfaces..." | tee -a "$LOG" && \
+		screen -dmS OpenVPN openvpn --route-nopull --config "$2" | tee -a "$LOG" && \
+		echo "Done. Access OpenVPN session by using 'screen -x OpenVPN'." | tee -a "$LOG" || \
+		echo "Failed to initiate OpenVPN connection. Stopping." | tee -a "$LOG" && \
+		exit 1
+	# if 'direct' with nothing after,
+	elif [ "$1" = "direct" ] && [ -z $2 ]; then
+		# try to connect to default OpenVPN server (direct)
+		echo "Attempting to connect to OpenVPN server using config '$OPENVPN_CONFIG' directly..." | tee -a "$LOG" && \
+		screen -dmS OpenVPN openvpn --config "$OPENVPN_CONFIG" | tee -a "$LOG" && \
+		echo "Done. Access OpenVPN session by using 'screen -x OpenVPN'." | tee -a "$LOG" || \
+		echo "Failed to initiate OpenVPN connection. Stopping." | tee -a "$LOG" && \
+		exit 1
+	# if 'direct' with given config,
+	elif [ "$1" = "direct" ] && ! [ -z $2 ]; then
+		# try to connect to custom OpenVPN server (direct)
+		echo "Attempting to connect to OpenVPN server using config '$2' directly..." | tee -a "$LOG" && \
+		screen -dmS OpenVPN openvpn  --config "$2" && \
+		echo "Done. Access OpenVPN session by using 'screen -x OpenVPN'." | tee -a "$LOG" || \
+		echo "Failed to initiate OpenVPN connection. Stopping." | tee -a "$LOG" && \
+		exit 1
+	# if something else,
+	else
+		echo "Invalid option(s) given." | tee -a "$LOG"
+		usage
+		exit 1
+	fi
+}
+
+# connect_wired()
+# connects to wired interface by invoking $DHCP_CLIENT on it
+connect_wired()
+{
+	ip link set $WIRED_INTERFACE up | tee -a "$LOG" && \
+	$DHCP_CLIENT $WIRED_INTERFACE | tee -a "$LOG" && \
+	echo "Successfully connected wired." | tee -a "$LOG" || \
+	echo "Failed to connect wired. Stopping." | tee -a "$LOG" && \
+	exit 1
+}
+
+
+####################################################
+################## KILL FUNCTIONS ##################
+####################################################
+
+# kill_wifi()
+# disconnects absolutely from all WiFi by setting its interface down
+# and killing wpa_supplicant
+kill_wifi()
+{
+	kill -9 `pgrep wpa_supplicant` | tee -a "$LOG" && \
+	ip link set dev $WIFI_INTERFACE down | tee -a "$LOG" && \
+	echo "Killed wpa_supplicant." | tee -a "$LOG" || \
+	echo "Failed to kill wpa_supplicant." | tee -a "$LOG"
+	#kill_openvpn
+}
+
+# kill_openvpn()
+# disconnects absolutely from all OpenVPN processes by killing them
+kill_openvpn()
+{
+	kill -9 `pgrep openvpn` | tee -a "$LOG" && \
+	echo "Killed OpenVPN." | tee -a "$LOG" || \
+	echo "Failed to kill OpenVPN." | tee -a "$LOG"
+
+}
+
+# kill_wired()
+# disconnects absolutely from wired connections by setting its interface down
+kill_wired()
+{
+	#kill -9 `pgrep $DHCP_CLIENT` | tee -a "$LOG" && \
+	ip link set dev $WIRED_INTERFACE down | tee -a "$LOG" && \
+	echo "Killed wired." | tee -a "$LOG" || \
+	echo "Failed to kill wired." | tee -a "$LOG"
+}
+
+
+# kill_all_processes()
+# kills all old processes (openvpn, $DHCP_CLIENT, wpa_supplicant)
+kill_all_processes()
+{
+	kill_wifi
+	kill_wired
+}
+
+
+
+######################################################
+################### MOD FUNCTIONS ####################
+######################################################
+
+# add_wifi_profile()
+# adds a wifi profile to wpa_supplicant
+add_wifi_profile()
+{
+	# if empty arguments,
+	if [ -z "$1" ]; then
+		echo "Please specify SSID type and SSID to add. Stopping." | tee -a "$LOG"
+		exit 1
+	# if first argument is "psk" and empty after,
+	elif [ "$1" = "psk" ] && [ -z "$2" ]; then
+		echo "Please specify SSID to add. Stopping." | tee -a "$LOG"
+	# if first argument is "psk" with SSID given,
+	elif [ "$1" = "psk" ] && [ ! -z "$2" ]; then
+		echo "Enter password:" | tee -a "$LOG"
+		# read in password securely
+		read -s PSK
+		echo "Attempting to add psk-enabled SSID '$2'..." | tee -a "$LOG"
+		WPA_ENTRY=$(wpa_passphrase "$2" "$PSK") && \
+		WPA_ENTRY=$(sed -e 's/#psk=".*"//' -e '/^\b\b\b$/d' -e 's/# .*stdin//' -e '/^$/d' <<< $WPA_ENTRY) && \
+		WPA_PRECURSOR > "$WPA_SUPPLICANT_CONF_DIR/$2.conf" && \
+		echo "$WPA_ENTRY" >> "$WPA_SUPPLICANT_CONF_DIR/$2.conf" && \
+		echo "wpa_supplicant entry successfully created at '$WPA_SUPPLICANT_CONF_DIR/$2.conf'" | tee -a "$LOG" || \
+		echo "Could not create wpa_supplicant entry." | tee -a "$LOG" && \
+		exit 1
+	# if something else,
+	else
+		echo "Please specify valid options. Stopping." | tee -a "$LOG"
+		usage
+	fi
+}
+
+
+# remove_wifi_profile()
+# attempts to remove WiFi profile from wpa_supplicant
+remove_wifi_profile()
+{
+	# if empty arguments
+	if [ -z "$1" ]; then
+		# err
+		echo "Please specify a profile to remove. Stopping." | tee -a "$LOG"
+		exit 1
+	fi
+
+	# get list of available profiles
+	OLD_IFS=$IFS
+	while IFS= read -r line; do
+		WIFI_PROFILES+=("$line")
+	done < <(ls "$WPA_SUPPLICANT_CONF_DIR" | grep -e ".*.conf" | awk -F".conf" '{print $1}' | awk '!/^wpa_supplicant$/')
+	IFS=$OLD_IFS
+
+	DELETED="FALSE"
+	# for each profile,
+	for profile in "${WIFI_PROFILES[@]}"; do
+		# if profile is found that matches,
+		if [ "$1" = "$profile" ]; then
+			# remove profile
+			echo "Removing '$1'" | tee -a "$LOG"
+			rm -f "$WPA_SUPPLICANT_CONF_DIR/$1.conf" | tee -a "$LOG"
+			DELETED="TRUE"
+		fi
+	done
+	# if matching profile not found,
+	if [ "$DELETED" = "FALSE" ]; then
+		# err
+		echo "Profile '$1' not found. Stopping." | tee -a "$LOG"
+		exit 1
+	else
+		echo "Successfuly deleted profile '$1'." | tee -a "$LOG"
+	fi
+}
+
+
+
+######################################################
+################### MAIN EXECUTION ###################
+######################################################
+
+sanity_check
+
+if [ $# -lt 1 ]; then
+	usage
+fi
+
+if [ "$1" = "list" ]; then
+	list_profiles
+elif [ "$1" = "connect" ]; then 
+	if [ "$2" = "wifi" ]; then
+		switch_profiles "$3"
+	elif [ "$2" = "wire" ]; then
+		connect_wired
+	elif [ "$2" = "openvpn" ]; then
+		connect_openvpn "$3" "$4"
+	else
+		echo "Unknown suboption." | tee -a "$LOG"
+		usage
+	fi
+elif [ "$1" = "stop" ]; then
+	if [ "$2" = "all" ]; then
+		stop_all_processes
+	elif [ "$2" = "wifi" ]; then
+		kill_wifi
+	elif [ "$2" = "wire" ]; then
+		kill_wired
+	elif [ "$2" = "openvpn" ]; then
+		kill_openvpn
+	else
+		echo "Unknown suboption." | tee -a "$LOG"
+		usage
+	fi
+elif [ "$1" = "scan" ]; then
+	scan_hotspots
+elif [ "$1" = "add" ]; then
+	add_wifi_profile "$2" "$3"
+elif [ "$1" = "remove" ]; then
+	remove_wifi_profile "$2"
+else
+	echo "Unknown option." | tee -a "$LOG"
+	usage
+	exit 1
+fi
+
+exit 0
+
+#list_profiles
+#echo
+#connect_openvpn "/home/trevorbautista/tester"
+#switch_profiles "ahsi_AZ_guest"

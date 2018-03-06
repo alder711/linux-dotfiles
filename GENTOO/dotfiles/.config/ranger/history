@@ -1,0 +1,7 @@
+set showhidden=true
+zh
+paste
+open_with 
+set show_hidden=true
+copy
+delete
