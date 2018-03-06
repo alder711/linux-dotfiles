@@ -6,9 +6,9 @@
 zstyle :compinstall filename '/home/trevorbautista/.zshrc'
 
 
-#autoload -Uz compinit promptinit
-#compinit
-#promptinit
+autoload -Uz compinit promptinit
+compinit
+promptinit
 
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
@@ -64,20 +64,25 @@ else
 	antigen apply
 
 
-	#POWERLEVEL9k prompt setup
-	POWERLEVEL9K_MODE='awesome-fontconfig'
-	POWERLINE9K_LEFT_SUBSEGMENT_SEPARATOR=$'\ue0b1'
-	#POWERLINE9K_HOME_ICON=''
-	
-	#colors
+	# POWERLEVEL9k prompt setup
+	POWERLEVEL9K_MODE='nerdfont-complete'
+	POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=$'\ue0b1'
+	POWERLEVEL9K_HOME_ICON='\uf015'
+	POWERLEVEL9K_LINUX_ICON='%F{magenta}\uf310 Gentoo'
+
+	# Context
+	DEFAULT_USER="Trevor"
+	POWERLEVEL9K_ALWAYS_SHOW_USER=true
+
+	# Colors
 	POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='053' #darker magenta
-	POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='011' #yellow
+	POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='220' #yellow
 	POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='red'
-	POWERLEVEL9K_DIR_HOME_BACKGROUND='022' #green
-	POWERLEVEL9K_DIR_HOME_FOREGROUND='black'
-	POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='034' #lighter green
-	POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='026' #even lighter green->blue
-	POWERLEVEL9K_OS_ICON_BACKGROUND='yellow'
+	POWERLEVEL9K_DIR_HOME_BACKGROUND='236' #gray
+	POWERLEVEL9K_DIR_HOME_FOREGROUND='250' #light gray
+	POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='067' #lighter gray
+	POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='139' #even lighter gray-pink
+	POWERLEVEL9K_OS_ICON_BACKGROUND='233' #gray
 	POWERLEVEL9K_VCS_CLEAN_BACKGROUND='033' #light blue
 	POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='124' #red
 	POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='214' #yellow'
@@ -89,20 +94,20 @@ else
 	POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{yellow}╭%F{red}─%F{black}"
 	POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{green}╰%F{blue}─[%F{yellow}%#%F{blue}] %F{white}"
 	
-	#spacing
+	# Spacing
 	POWERLEVEL9K_PROMPT_ON_NEWLINE=true			#actual prompt is on next line
 	POWERLEVEL9K_PROMPT_ADD_NEWLINE=true			#add newline before next prompt
 	
-	#element customizations
+	# Element customizations
 	POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'			#time format
 	POWERLEVEL9K_SHORTEN_DIR_LENGTH=1			#number of directories to leave at end
 	POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle" 	#strategy of truncation
 	POWERLEVEL9K_SHORTEN_DELIMITER=".."			#truncate delimiter
 	POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{052} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{black}"
-	#POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{red} $(print_icon 'HOME_ICON') %F{black}"
+	#POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{blue} $(print_icon 'HOME_ICON') %F{black}"
 	
-	#prompt
-	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
+	# Prompt
+	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
 	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 	
 
@@ -148,8 +153,8 @@ PS1='[\u@\h \W]\$ '
 alias multimc=multimc5
 alias chirp="sudo chirpw"
 alias ltspice="/usr/bin/wine '/home/trevorbautista/.wine/drive_c/Program Files/LTspiceXVII/XVIIx64.exe'"
-#alias sudo="sudo -E"
-#alias su="sudo su -p"
+alias sudo="sudo -E"
+alias su="su -p"
 
 
 #=====================================

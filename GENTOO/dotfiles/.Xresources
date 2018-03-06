@@ -11,6 +11,15 @@ XTerm*Foreground: white
 !! WINDOW !!
 !XTerm*BorderWidth: 0
 
+!! FONT !!
+!!XTerm.vt100.faceName: Powerline:size=10:antialias=false
+!!XTerm.vt100.font: 7x13
+!!XTerm*faceName: PowerlineSymbols
+!! XTerm*faceName: TerminessTTF NF:style=Regular:antialias=true:hinting=true:autohint=true:size=10
+!!XTerm*faceName: FuraCode Nerd Font Mono:style=Retina,Regular:size=8
+!!XTerm*faceName: InconsolataGo Nerd Font Mono:style=Medium:size=8
+XTerm*faceName: DejaVuSansMono NF:style=Condensed Regular:size=8
+!!XTerm*font: 7x13
 
 
 !!!!!!!!!!! UXTERM !!!!!!!!!!!!!!
@@ -18,6 +27,15 @@ XTerm*Foreground: white
 !! COLOR !!
 UXTerm*Background: black
 UXTerm*Foreground: white
+
+!! FONT !!
+UXTerm*renderFont: true
+!!UXTerm*faceName: DejaVu Sans Mono for Powerline:antialias=true:hinting=true:autohint=true:pixelsize=10
+!!UXTerm*faceName: xft:TerminessTTF Nerd Font Mono:style=Regular:size=12
+!!UXTerm*faceName:MesloLGMDZ Nerd Font Mono:style=RegularForPowerline:size=8
+!! UXTerm*letterSpace: -1
+!! UXTerm*faceSize: 12
+!!UXTerm \*faceName: xft:Bitstream Vera Sans Mono for Powerline:pixelsize=12
 
 
 !!!!!!!!!!!!! ROFI !!!!!!!!!!!!!!
