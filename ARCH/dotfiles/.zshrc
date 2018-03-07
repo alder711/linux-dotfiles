@@ -58,6 +58,7 @@ else
 	antigen bundle git
 	antigen bundle command-not-found
 	antigen bundle zsh-users/zsh-syntax-highlighting
+	antigen bundle colored-man-pages
 
 	# Enable Powerlevel9K ZSH theme
 	#source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme # Ownership of /home/trevorbautista/.antigen/bundles: root:trevorbautista
@@ -80,8 +81,8 @@ else
 	POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='red'
 	POWERLEVEL9K_DIR_HOME_BACKGROUND='236' #gray
 	POWERLEVEL9K_DIR_HOME_FOREGROUND='250' #light gray
-	POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='067' #lighter gray
-	POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='139' #even lighter gray-pink
+	POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='238' #lighter gray
+	POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='095' #even lighter gray-pink
 	POWERLEVEL9K_OS_ICON_BACKGROUND='233' #gray
 	POWERLEVEL9K_VCS_CLEAN_BACKGROUND='033' #light blue
 	POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='124' #red
