@@ -64,7 +64,7 @@ exec compton -f --backend glx --vsync opengl-swc --config ~/.config/compton/comp
 # start conkies
 #exec conky -c ~/.config/conky/conky_main_stats # sidebar stats
 #exec conky -c ~/.config/conky/conky_loggs      # console logs
-exec sleep 5 && ~/.config/conky/startup_i3.sh
+exec sleep 3 && ~/.config/conky/startup_i3.sh
 
 # Toggle borders
 bindsym $mod+b border toggle
@@ -202,7 +202,7 @@ mode "resize" {
 
 
 # Shutdown, reboot, lock, logout
-set $Locker xautolock -locknow && sleep 1
+set $Locker sudo xautolock -locknow && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
 	# lock screen
@@ -210,13 +210,14 @@ mode "$mode_system" {
 	# logout
 	bindsym e exec --no-startup-id i3-msg exit, mode "default"
 	# suspend
-	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+	bindsym s exec --no-startup-id $Locker && sudo systemctl suspend, mode "default"
 	# hibernate
-	bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+	bindsym h exec --no-startup-id $Locker && sudo systemctl hibernate, mode "default"
 	# reboot
-	bindsym r exec --no-startup-id systemctl reboot, mode "default"
+	bindsym r exec --no-startup-id sudo systemctl reboot, mode "default"
 	# shutdown
-	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+	#bindsym Shift+s exec --no-startup-id sudo systemctl poweroff -i, mode "default"
+	bindsym Shift+s exec --no-startup-id sudo shutdown -h now, mode "default"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
