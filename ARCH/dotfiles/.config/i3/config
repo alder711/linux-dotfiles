@@ -244,11 +244,11 @@ bar {
 	tray_output	primary
 	# bar font
 	font		misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-	font		pango:DejaVu Sans Mono 10
+	font		pango:DejaVuSansMono Nerd Font 8
 	# separator symbol between bar elements
 	separator_symbol "||"
 	# display status in bar
-	status_command	i3status
+	status_command	i3status -c ~/.config/i3status/i3status.conf
 	# bar position
 	position	top
 	# display bar when $mod pressed
