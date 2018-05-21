@@ -1,0 +1,689 @@
+[WRN][1526827760.1428945065] /home/trevor/.zsh/zsh/share/antigen.zsh:266
+[WRN][1526827760.1428945065] -antigen-interactive-mode: file:file:shfunc:shfunc $_ANTIGEN_INTERACTIVE = 
+[WRN][1526827760.1432673931] /home/trevor/.zsh/zsh/share/antigen.zsh:1590
+[WRN][1526827760.1432673931] -antigen-lock-init return code was 0
+[LOG][1526827760.1433298588] /home/trevor/.zsh/zsh/share/antigen.zsh:1592
+[LOG][1526827760.1433298588] LOADED EXTENSION lock EXT
+[WRN][1526827760.1445169449] /home/trevor/.zsh/zsh/share/antigen.zsh:1702
+[WRN][1526827760.1445169449] Init parallel extension PARALLEL
+[WRN][1526827760.1446115971] /home/trevor/.zsh/zsh/share/antigen.zsh:266
+[WRN][1526827760.1446115971] -antigen-interactive-mode: file:file:shfunc:shfunc:shfunc:eval:shfunc:shfunc $_ANTIGEN_INTERACTIVE = 
+[WRN][1526827760.1447067261] /home/trevor/.zsh/zsh/share/antigen.zsh:1590
+[WRN][1526827760.1447067261] -antigen-parallel-init return code was 0
+[LOG][1526827760.1447591782] /home/trevor/.zsh/zsh/share/antigen.zsh:1592
+[LOG][1526827760.1447591782] LOADED EXTENSION parallel EXT
+[WRN][1526827760.1448121071] /home/trevor/.zsh/zsh/share/antigen.zsh:1710
+[WRN][1526827760.1448121071] Exec parallel extension PARALLEL
+[WRN][1526827760.1450712681] /home/trevor/.zsh/zsh/share/antigen.zsh:266
+[WRN][1526827760.1450712681] -antigen-interactive-mode: file:file:shfunc:shfunc:shfunc:eval:shfunc:shfunc $_ANTIGEN_INTERACTIVE = 
+[WRN][1526827760.1451473236] /home/trevor/.zsh/zsh/share/antigen.zsh:1590
+[WRN][1526827760.1451473236] -antigen-defer-init return code was 0
+[LOG][1526827760.1452016830] /home/trevor/.zsh/zsh/share/antigen.zsh:1592
+[LOG][1526827760.1452016830] LOADED EXTENSION defer EXT
+[WRN][1526827760.1459648609] /home/trevor/.zsh/zsh/share/antigen.zsh:266
+[WRN][1526827760.1459648609] -antigen-interactive-mode: file:file:shfunc:shfunc:shfunc:eval:shfunc:shfunc $_ANTIGEN_INTERACTIVE = 
+[WRN][1526827760.1461741924] /home/trevor/.zsh/zsh/share/antigen.zsh:1590
+[WRN][1526827760.1461741924] -antigen-cache-init return code was 0
+[LOG][1526827760.1462261677] /home/trevor/.zsh/zsh/share/antigen.zsh:1592
+[LOG][1526827760.1462261677] LOADED EXTENSION cache EXT
+[WRN][1526827760.1478431225] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1478431225] Updated meta: target antigen mode once type pre called 1
+[WRN][1526827760.1479122639] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1479122639] Processing hooks: antigen-lock
+[WRN][1526827760.1479632854] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1479632854] Pre hook: antigen-lock use oh-my-zsh
+[LOG][1526827760.1480178833] /home/trevor/.zsh/zsh/share/antigen.zsh:1676
+[LOG][1526827760.1480178833] antigen-lock called
+[WRN][1526827760.1480746269] /home/trevor/.zsh/zsh/share/antigen.zsh:1687
+[WRN][1526827760.1480746269] Creating antigen-lock file at /home/trevor/.antigen/.lock
+[WRN][1526827760.1493222713] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827760.1493222713] -antigen-hook-antigen use oh-my-zsh
+[WRN][1526827760.1517918110] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1517918110] Updated meta: target antigen-bundle mode repeat type replace called 1
+[WRN][1526827760.1519002914] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1519002914] Updated meta: target antigen-bundle mode repeat type pre called 1
+[WRN][1526827760.1519625187] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1519625187] Processing hooks: antigen-bundle-defer antigen-bundle-cached
+[WRN][1526827760.1520152092] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1520152092] Pre hook: antigen-bundle-cached --loc=lib
+[WRN][1526827760.1521074772] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1521074772] Replace hook: antigen-bundle-defer --loc=lib
+[WRN][1526827760.1521840096] /home/trevor/.zsh/zsh/share/antigen.zsh:1518
+[WRN][1526827760.1521840096] antigen-bundle-defer shortcircuited
+[LOG][1526827760.1523251534] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1523251534] Return from hook antigen with 0
+[WRN][1526827760.1524710655] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827760.1524710655] Ignoring hook due to mode once: antigen-lock
+[WRN][1526827760.1525306702] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1525306702] Processing hooks: antigen-lock
+[WRN][1526827760.1525871754] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827760.1525871754] -antigen-hook-antigen bundle git
+[WRN][1526827760.1527278423] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1527278423] Updated meta: target antigen-bundle mode repeat type replace called 2
+[WRN][1526827760.1528143883] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1528143883] Updated meta: target antigen-bundle mode repeat type pre called 2
+[WRN][1526827760.1528718472] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1528718472] Processing hooks: antigen-bundle-defer antigen-bundle-cached
+[WRN][1526827760.1529197693] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1529197693] Pre hook: antigen-bundle-cached git
+[WRN][1526827760.1530029774] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1530029774] Replace hook: antigen-bundle-defer git
+[WRN][1526827760.1530706882] /home/trevor/.zsh/zsh/share/antigen.zsh:1518
+[WRN][1526827760.1530706882] antigen-bundle-defer shortcircuited
+[LOG][1526827760.1531553268] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1531553268] Return from hook antigen with 0
+[WRN][1526827760.1532797813] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827760.1532797813] Ignoring hook due to mode once: antigen-lock
+[WRN][1526827760.1533286572] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1533286572] Processing hooks: antigen-lock
+[WRN][1526827760.1533832550] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827760.1533832550] -antigen-hook-antigen bundle command-not-found
+[WRN][1526827760.1535224915] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1535224915] Updated meta: target antigen-bundle mode repeat type replace called 3
+[WRN][1526827760.1536073685] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1536073685] Updated meta: target antigen-bundle mode repeat type pre called 3
+[WRN][1526827760.1536641121] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1536641121] Processing hooks: antigen-bundle-defer antigen-bundle-cached
+[WRN][1526827760.1537115574] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1537115574] Pre hook: antigen-bundle-cached command-not-found
+[WRN][1526827760.1537942886] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1537942886] Replace hook: antigen-bundle-defer command-not-found
+[WRN][1526827760.1538619995] /home/trevor/.zsh/zsh/share/antigen.zsh:1518
+[WRN][1526827760.1538619995] antigen-bundle-defer shortcircuited
+[LOG][1526827760.1539463997] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1539463997] Return from hook antigen with 0
+[WRN][1526827760.1540739536] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827760.1540739536] Ignoring hook due to mode once: antigen-lock
+[WRN][1526827760.1541225910] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1541225910] Processing hooks: antigen-lock
+[WRN][1526827760.1541776657] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827760.1541776657] -antigen-hook-antigen bundle zsh-users/zsh-syntax-highlighting
+[WRN][1526827760.1543180943] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1543180943] Updated meta: target antigen-bundle mode repeat type replace called 4
+[WRN][1526827760.1544024944] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1544024944] Updated meta: target antigen-bundle mode repeat type pre called 4
+[WRN][1526827760.1544585228] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1544585228] Processing hooks: antigen-bundle-defer antigen-bundle-cached
+[WRN][1526827760.1545066833] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1545066833] Pre hook: antigen-bundle-cached zsh-users/zsh-syntax-highlighting
+[WRN][1526827760.1545958519] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1545958519] Replace hook: antigen-bundle-defer zsh-users/zsh-syntax-highlighting
+[WRN][1526827760.1546642780] /home/trevor/.zsh/zsh/share/antigen.zsh:1518
+[WRN][1526827760.1546642780] antigen-bundle-defer shortcircuited
+[LOG][1526827760.1547489166] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1547489166] Return from hook antigen with 0
+[WRN][1526827760.1548724174] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827760.1548724174] Ignoring hook due to mode once: antigen-lock
+[WRN][1526827760.1549210548] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1549210548] Processing hooks: antigen-lock
+[WRN][1526827760.1549754143] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827760.1549754143] -antigen-hook-antigen bundle colored-man-pages
+[WRN][1526827760.1551134586] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1551134586] Updated meta: target antigen-bundle mode repeat type replace called 5
+[WRN][1526827760.1551976204] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1551976204] Updated meta: target antigen-bundle mode repeat type pre called 5
+[WRN][1526827760.1552536488] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1552536488] Processing hooks: antigen-bundle-defer antigen-bundle-cached
+[WRN][1526827760.1553008556] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1553008556] Pre hook: antigen-bundle-cached colored-man-pages
+[WRN][1526827760.1553833485] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1553833485] Replace hook: antigen-bundle-defer colored-man-pages
+[WRN][1526827760.1554508209] /home/trevor/.zsh/zsh/share/antigen.zsh:1518
+[WRN][1526827760.1554508209] antigen-bundle-defer shortcircuited
+[LOG][1526827760.1555349827] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1555349827] Return from hook antigen with 0
+[WRN][1526827760.1753137112] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827760.1753137112] Ignoring hook due to mode once: antigen-lock
+[WRN][1526827760.1753926277] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1753926277] Processing hooks: antigen-lock
+[WRN][1526827760.1754610538] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827760.1754610538] -antigen-hook-antigen theme powerlevel9k
+[WRN][1526827760.1757085323] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1757085323] Updated meta: target antigen-bundle mode repeat type replace called 6
+[WRN][1526827760.1758177280] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1758177280] Updated meta: target antigen-bundle mode repeat type pre called 6
+[WRN][1526827760.1758859158] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1758859158] Processing hooks: antigen-bundle-defer antigen-bundle-cached
+[WRN][1526827760.1759438515] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1759438515] Pre hook: antigen-bundle-cached --loc=themes/powerlevel9k --btype=theme
+[WRN][1526827760.1760468483] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1760468483] Replace hook: antigen-bundle-defer --loc=themes/powerlevel9k --btype=theme
+[WRN][1526827760.1761307716] /home/trevor/.zsh/zsh/share/antigen.zsh:1518
+[WRN][1526827760.1761307716] antigen-bundle-defer shortcircuited
+[LOG][1526827760.1762571335] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1762571335] Return from hook antigen with 0
+[WRN][1526827760.1774508953] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827760.1774508953] Ignoring hook due to mode once: antigen-lock
+[WRN][1526827760.1775348186] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1775348186] Processing hooks: antigen-lock
+[WRN][1526827760.1776089668] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827760.1776089668] -antigen-hook-antigen apply
+[WRN][1526827760.1777985096] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1777985096] Updated meta: target antigen-apply mode once type post called 1
+[WRN][1526827760.1779220104] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1779220104] Updated meta: target antigen-apply mode once type pre called 1
+[WRN][1526827760.1780273914] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1780273914] Updated meta: target antigen-apply mode once type replace called 1
+[WRN][1526827760.1781330109] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1781330109] Updated meta: target antigen-apply mode once type pre called 1
+[WRN][1526827760.1782341003] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1782341003] Updated meta: target antigen-apply mode once type post called 1
+[WRN][1526827760.1783049107] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1783049107] Processing hooks: antigen-apply-lock antigen-apply-parallel antigen-apply-parallel-execute antigen-apply-defer antigen-apply-cached
+[WRN][1526827760.1783659458] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1783659458] Pre hook: antigen-apply-parallel
+[WRN][1526827760.1784305573] /home/trevor/.zsh/zsh/share/antigen.zsh:1762
+[WRN][1526827760.1784305573] Parallel pre-apply PARALLEL PRE-APPLY
+[WRN][1526827760.1786055565] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1786055565] Pre hook: antigen-apply-defer
+[WRN][1526827760.1786696911] /home/trevor/.zsh/zsh/share/antigen.zsh:1641
+[WRN][1526827760.1786696911] Defer pre-apply DEFER PRE-APPLY
+[LOG][1526827760.1788432598] /home/trevor/.zsh/zsh/share/antigen.zsh:1647
+[LOG][1526827760.1788432598] Processing deferred bundle: --loc=lib DEFER
+[WRN][1526827760.1790082455] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1790082455] Updated meta: target antigen-bundle mode repeat type pre called 7
+[WRN][1526827760.1791157722] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1791157722] Updated meta: target antigen-bundle mode repeat type replace called 1
+[WRN][1526827760.1791868210] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1791868210] Processing hooks: antigen-bundle-cached antigen-bundle-parallel
+[WRN][1526827760.1792464256] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1792464256] Pre hook: antigen-bundle-cached --loc=lib
+[WRN][1526827760.1793544292] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1793544292] Replace hook: antigen-bundle-parallel --loc=lib
+[TRA][1526827760.1794230938] /home/trevor/.zshrc:1766
+[TRA][1526827760.1794230938] antigen-bundle-parallel: --loc=lib PARALLEL
+[TRA][1526827760.1794230938] TRACE
+antigen-bundle-parallel
+-antigen-hook-handler
+antigen-bundle
+antigen-apply-defer
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827760.1795101166] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827760.1795101166] Replaced hooked function.
+[LOG][1526827760.1795699596] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1795699596] Return from hook antigen-bundle with 0
+[LOG][1526827760.1796543598] /home/trevor/.zsh/zsh/share/antigen.zsh:1647
+[LOG][1526827760.1796543598] Processing deferred bundle: git DEFER
+[WRN][1526827760.1797966957] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1797966957] Updated meta: target antigen-bundle mode repeat type pre called 8
+[WRN][1526827760.1798977852] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1798977852] Updated meta: target antigen-bundle mode repeat type replace called 2
+[WRN][1526827760.1799666882] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1799666882] Processing hooks: antigen-bundle-cached antigen-bundle-parallel
+[WRN][1526827760.1800246239] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1800246239] Pre hook: antigen-bundle-cached git
+[WRN][1526827760.1801264286] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1801264286] Replace hook: antigen-bundle-parallel git
+[TRA][1526827760.1801903248] /home/trevor/.zshrc:1766
+[TRA][1526827760.1801903248] antigen-bundle-parallel: git PARALLEL
+[TRA][1526827760.1801903248] TRACE
+antigen-bundle-parallel
+-antigen-hook-handler
+antigen-bundle
+antigen-apply-defer
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827760.1802814007] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827760.1802814007] Replaced hooked function.
+[LOG][1526827760.1803414822] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1803414822] Return from hook antigen-bundle with 0
+[LOG][1526827760.1804263592] /home/trevor/.zsh/zsh/share/antigen.zsh:1647
+[LOG][1526827760.1804263592] Processing deferred bundle: command-not-found DEFER
+[WRN][1526827760.1805691719] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1805691719] Updated meta: target antigen-bundle mode repeat type pre called 9
+[WRN][1526827760.1806943417] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1806943417] Updated meta: target antigen-bundle mode repeat type replace called 3
+[WRN][1526827760.1808001995] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1808001995] Processing hooks: antigen-bundle-cached antigen-bundle-parallel
+[WRN][1526827760.1808695793] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1808695793] Pre hook: antigen-bundle-cached command-not-found
+[WRN][1526827760.1809928417] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1809928417] Replace hook: antigen-bundle-parallel command-not-found
+[TRA][1526827760.1810791492] /home/trevor/.zshrc:1766
+[TRA][1526827760.1810791492] antigen-bundle-parallel: command-not-found PARALLEL
+[TRA][1526827760.1810791492] TRACE
+antigen-bundle-parallel
+-antigen-hook-handler
+antigen-bundle
+antigen-apply-defer
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827760.1811740398] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827760.1811740398] Replaced hooked function.
+[LOG][1526827760.1812424660] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1812424660] Return from hook antigen-bundle with 0
+[LOG][1526827760.1813633442] /home/trevor/.zsh/zsh/share/antigen.zsh:1647
+[LOG][1526827760.1813633442] Processing deferred bundle: zsh-users/zsh-syntax-highlighting DEFER
+[WRN][1526827760.1815826893] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1815826893] Updated meta: target antigen-bundle mode repeat type pre called 10
+[WRN][1526827760.1817531586] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1817531586] Updated meta: target antigen-bundle mode repeat type replace called 4
+[WRN][1526827760.1818611622] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1818611622] Processing hooks: antigen-bundle-cached antigen-bundle-parallel
+[WRN][1526827760.1819310188] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1819310188] Pre hook: antigen-bundle-cached zsh-users/zsh-syntax-highlighting
+[WRN][1526827760.1820619106] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1820619106] Replace hook: antigen-bundle-parallel zsh-users/zsh-syntax-highlighting
+[TRA][1526827760.1821186543] /home/trevor/.zshrc:1766
+[TRA][1526827760.1821186543] antigen-bundle-parallel: zsh-users/zsh-syntax-highlighting PARALLEL
+[TRA][1526827760.1821186543] TRACE
+antigen-bundle-parallel
+-antigen-hook-handler
+antigen-bundle
+antigen-apply-defer
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827760.1821920872] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827760.1821920872] Replaced hooked function.
+[LOG][1526827760.1822547913] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1822547913] Return from hook antigen-bundle with 0
+[LOG][1526827760.1823284626] /home/trevor/.zsh/zsh/share/antigen.zsh:1647
+[LOG][1526827760.1823284626] Processing deferred bundle: colored-man-pages DEFER
+[WRN][1526827760.1824536324] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1824536324] Updated meta: target antigen-bundle mode repeat type pre called 11
+[WRN][1526827760.1825509071] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1825509071] Updated meta: target antigen-bundle mode repeat type replace called 5
+[WRN][1526827760.1826102734] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1826102734] Processing hooks: antigen-bundle-cached antigen-bundle-parallel
+[WRN][1526827760.1826605797] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1826605797] Pre hook: antigen-bundle-cached colored-man-pages
+[WRN][1526827760.1827487946] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1827487946] Replace hook: antigen-bundle-parallel colored-man-pages
+[TRA][1526827760.1828129292] /home/trevor/.zshrc:1766
+[TRA][1526827760.1828129292] antigen-bundle-parallel: colored-man-pages PARALLEL
+[TRA][1526827760.1828129292] TRACE
+antigen-bundle-parallel
+-antigen-hook-handler
+antigen-bundle
+antigen-apply-defer
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827760.1828997135] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827760.1828997135] Replaced hooked function.
+[LOG][1526827760.1829626560] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1829626560] Return from hook antigen-bundle with 0
+[LOG][1526827760.1830480099] /home/trevor/.zsh/zsh/share/antigen.zsh:1647
+[LOG][1526827760.1830480099] Processing deferred bundle: --loc=themes/powerlevel9k --btype=theme DEFER
+[WRN][1526827760.1831932068] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1831932068] Updated meta: target antigen-bundle mode repeat type pre called 12
+[WRN][1526827760.1832978725] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827760.1832978725] Updated meta: target antigen-bundle mode repeat type replace called 6
+[WRN][1526827760.1833574772] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827760.1833574772] Processing hooks: antigen-bundle-cached antigen-bundle-parallel
+[WRN][1526827760.1834070683] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827760.1834070683] Pre hook: antigen-bundle-cached --loc=themes/powerlevel9k --btype=theme
+[WRN][1526827760.1834955215] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1834955215] Replace hook: antigen-bundle-parallel --loc=themes/powerlevel9k --btype=theme
+[TRA][1526827760.1835505962] /home/trevor/.zshrc:1766
+[TRA][1526827760.1835505962] antigen-bundle-parallel: --loc=themes/powerlevel9k --btype=theme PARALLEL
+[TRA][1526827760.1835505962] TRACE
+antigen-bundle-parallel
+-antigen-hook-handler
+antigen-bundle
+antigen-apply-defer
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827760.1836225986] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827760.1836225986] Replaced hooked function.
+[LOG][1526827760.1836755276] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827760.1836755276] Return from hook antigen-bundle with 0
+[WRN][1526827760.1837856770] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827760.1837856770] Replace hook: antigen-apply-parallel-execute
+[WRN][1526827760.1838386059] /home/trevor/.zsh/zsh/share/antigen.zsh:1774
+[WRN][1526827760.1838386059] Parallel replace-apply PARALLEL REPLACE-APPLY
+[WRN][1526827760.1839773655] /home/trevor/.zsh/zsh/share/antigen.zsh:1713
+[WRN][1526827760.1839773655] Parallel antigen-bundle-parallel-execute PARALLEL
+[WRN][1526827760.1840343475] /home/trevor/.zsh/zsh/share/antigen.zsh:1717
+[WRN][1526827760.1840343475] Gonna install in parallel 6 bundles. PARALLEL
+[WRN][1526827760.1840817928] /home/trevor/.zsh/zsh/share/antigen.zsh:1719
+[WRN][1526827760.1840817928] --loc=lib git command-not-found zsh-users/zsh-syntax-highlighting colored-man-pages --loc=themes/powerlevel9k --btype=theme PARALLEL
+[WRN][1526827760.1845648289] /home/trevor/.zsh/zsh/share/antigen.zsh:1726
+[WRN][1526827760.1845648289] Install in parallel robbyrussell/oh-my-zsh. PARALLEL
+[WRN][1526827760.1856820583] /home/trevor/.zsh/zsh/share/antigen.zsh:1733
+[WRN][1526827760.1856820583] Bundle robbyrussell/oh-my-zsh already cloned locally. PARALLEL
+[WRN][1526827760.1862745285] /home/trevor/.zsh/zsh/share/antigen.zsh:1733
+[WRN][1526827760.1862745285] Bundle robbyrussell/oh-my-zsh already cloned locally. PARALLEL
+[WRN][1526827760.1867876053] /home/trevor/.zsh/zsh/share/antigen.zsh:1726
+[WRN][1526827760.1867876053] Install in parallel zsh-users/zsh-syntax-highlighting. PARALLEL
+[WRN][1526827760.1891613007] /home/trevor/.zsh/zsh/share/antigen.zsh:1733
+[WRN][1526827760.1891613007] Bundle robbyrussell/oh-my-zsh already cloned locally. PARALLEL
+[WRN][1526827760.1896486282] /home/trevor/.zsh/zsh/share/antigen.zsh:1733
+[WRN][1526827760.1896486282] Bundle robbyrussell/oh-my-zsh already cloned locally. PARALLEL
+[WRN][1526827762.2449645996] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2449645996] Updated meta: target antigen-bundle mode repeat type pre called 13
+[WRN][1526827762.2452976704] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2452976704] Processing hooks: antigen-bundle-cached
+[WRN][1526827762.2455179691] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827762.2455179691] Pre hook: antigen-bundle-cached --loc=lib
+[WRN][1526827762.2459270954] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827762.2459270954] -antigen-hook-antigen-bundle --loc=lib
+[TRA][1526827762.2461566925] /home/trevor/.zsh/zsh/share/antigen.zsh:1456
+[TRA][1526827762.2461566925] Called antigen-bundle with --loc=lib BUNDLE
+[TRA][1526827762.2461566925] TRACE
+-antigen-hook-antigen-bundle
+-antigen-hook-handler
+antigen-bundle
+antigen-bundle-parallel-execute
+antigen-apply-parallel-execute
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827762.2488307953] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2488307953] Updated meta: target -antigen-load-env mode repeat type replace called 1
+[WRN][1526827762.2491719723] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2491719723] Processing hooks: -antigen-load-env-cached
+[WRN][1526827762.2494792938] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2494792938] Replace hook: -antigen-load-env-cached dir /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh btype plugin url https://github.com/robbyrussell/oh-my-zsh.git loc lib name robbyrussell/oh-my-zsh make_local_clone true
+[WRN][1526827762.2499153614] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2499153614] Replaced hooked function.
+[LOG][1526827762.2501223087] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2501223087] Return from hook -antigen-load-env with 0
+[WRN][1526827762.2508811951] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2508811951] Updated meta: target -antigen-load-source mode repeat type replace called 1
+[WRN][1526827762.2511222363] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2511222363] Processing hooks: -antigen-load-source-cached
+[WRN][1526827762.2514433861] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2514433861] Replace hook: -antigen-load-source-cached /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/bzr.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/clipboard.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/compfix.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/completion.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/correction.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/diagnostics.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/directories.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/functions.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/git.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/grep.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/history.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/key-bindings.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/misc.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/nvm.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/prompt_info_functions.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/spectrum.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/termsupport.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/theme-and-appearance.zsh
+[WRN][1526827762.2519636154] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2519636154] Replaced hooked function.
+[LOG][1526827762.2521598339] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2521598339] Return from hook -antigen-load-source with 0
+[LOG][1526827762.2525897026] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2525897026] Return from hook antigen-bundle with 0
+[WRN][1526827762.2531306744] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2531306744] Updated meta: target antigen-bundle mode repeat type pre called 14
+[WRN][1526827762.2533531189] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2533531189] Processing hooks: antigen-bundle-cached
+[WRN][1526827762.2535350323] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827762.2535350323] Pre hook: antigen-bundle-cached git
+[WRN][1526827762.2538347244] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827762.2538347244] -antigen-hook-antigen-bundle git
+[TRA][1526827762.2540321350] /home/trevor/.zsh/zsh/share/antigen.zsh:1456
+[TRA][1526827762.2540321350] Called antigen-bundle with git BUNDLE
+[TRA][1526827762.2540321350] TRACE
+-antigen-hook-antigen-bundle
+-antigen-hook-handler
+antigen-bundle
+antigen-bundle-parallel-execute
+antigen-apply-parallel-execute
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827762.2561001778] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2561001778] Updated meta: target -antigen-load-env mode repeat type replace called 2
+[WRN][1526827762.2563571930] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2563571930] Processing hooks: -antigen-load-env-cached
+[WRN][1526827762.2566320896] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2566320896] Replace hook: -antigen-load-env-cached dir /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh btype plugin url https://github.com/robbyrussell/oh-my-zsh.git loc plugins/git name robbyrussell/oh-my-zsh make_local_clone true
+[WRN][1526827762.2570431232] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2570431232] Replaced hooked function.
+[LOG][1526827762.2572398186] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2572398186] Return from hook -antigen-load-env with 0
+[WRN][1526827762.2578001022] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2578001022] Updated meta: target -antigen-load-source mode repeat type replace called 2
+[WRN][1526827762.2580385208] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2580385208] Processing hooks: -antigen-load-source-cached
+[WRN][1526827762.2582807541] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2582807541] Replace hook: -antigen-load-source-cached /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git/git.plugin.zsh
+[WRN][1526827762.2585632801] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2585632801] Replaced hooked function.
+[LOG][1526827762.2587568760] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2587568760] Return from hook -antigen-load-source with 0
+[LOG][1526827762.2590858936] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2590858936] Return from hook antigen-bundle with 0
+[WRN][1526827762.2592267990] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2592267990] Updated meta: target antigen-bundle mode repeat type pre called 15
+[WRN][1526827762.2592837811] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2592837811] Processing hooks: antigen-bundle-cached
+[WRN][1526827762.2593307495] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827762.2593307495] Pre hook: antigen-bundle-cached command-not-found
+[WRN][1526827762.2594091892] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827762.2594091892] -antigen-hook-antigen-bundle command-not-found
+[TRA][1526827762.2594652176] /home/trevor/.zsh/zsh/share/antigen.zsh:1456
+[TRA][1526827762.2594652176] Called antigen-bundle with command-not-found BUNDLE
+[TRA][1526827762.2594652176] TRACE
+-antigen-hook-antigen-bundle
+-antigen-hook-handler
+antigen-bundle
+antigen-bundle-parallel-execute
+antigen-apply-parallel-execute
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827762.2599959373] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2599959373] Updated meta: target -antigen-load-env mode repeat type replace called 3
+[WRN][1526827762.2600615025] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2600615025] Processing hooks: -antigen-load-env-cached
+[WRN][1526827762.2601323128] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2601323128] Replace hook: -antigen-load-env-cached dir /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh btype plugin url https://github.com/robbyrussell/oh-my-zsh.git loc plugins/command-not-found name robbyrussell/oh-my-zsh make_local_clone true
+[WRN][1526827762.2602398396] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2602398396] Replaced hooked function.
+[LOG][1526827762.2602901459] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2602901459] Return from hook -antigen-load-env with 0
+[WRN][1526827762.2604351044] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2604351044] Updated meta: target -antigen-load-source mode repeat type replace called 3
+[WRN][1526827762.2604961395] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2604961395] Processing hooks: -antigen-load-source-cached
+[WRN][1526827762.2605581284] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2605581284] Replace hook: -antigen-load-source-cached /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh
+[WRN][1526827762.2606310844] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2606310844] Replaced hooked function.
+[LOG][1526827762.2606799603] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2606799603] Return from hook -antigen-load-source with 0
+[LOG][1526827762.2607765198] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2607765198] Return from hook antigen-bundle with 0
+[WRN][1526827762.2609131336] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2609131336] Updated meta: target antigen-bundle mode repeat type pre called 16
+[WRN][1526827762.2609703541] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2609703541] Processing hooks: antigen-bundle-cached
+[WRN][1526827762.2610180378] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827762.2610180378] Pre hook: antigen-bundle-cached zsh-users/zsh-syntax-highlighting
+[WRN][1526827762.2610962391] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827762.2610962391] -antigen-hook-antigen-bundle zsh-users/zsh-syntax-highlighting
+[TRA][1526827762.2611474991] /home/trevor/.zsh/zsh/share/antigen.zsh:1456
+[TRA][1526827762.2611474991] Called antigen-bundle with zsh-users/zsh-syntax-highlighting BUNDLE
+[TRA][1526827762.2611474991] TRACE
+-antigen-hook-antigen-bundle
+-antigen-hook-handler
+antigen-bundle
+antigen-bundle-parallel-execute
+antigen-apply-parallel-execute
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827762.2616882324] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2616882324] Updated meta: target -antigen-load-env mode repeat type replace called 4
+[WRN][1526827762.2617530823] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2617530823] Processing hooks: -antigen-load-env-cached
+[WRN][1526827762.2618241310] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2618241310] Replace hook: -antigen-load-env-cached dir /home/trevor/.antigen/bundles/zsh-users/zsh-syntax-highlighting btype plugin url https://github.com/zsh-users/zsh-syntax-highlighting.git loc / name zsh-users/zsh-syntax-highlighting make_local_clone true
+[WRN][1526827762.2619383335] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2619383335] Replaced hooked function.
+[LOG][1526827762.2619893551] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2619893551] Return from hook -antigen-load-env with 0
+[WRN][1526827762.2621347904] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2621347904] Updated meta: target -antigen-load-source mode repeat type replace called 4
+[WRN][1526827762.2621955872] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2621955872] Processing hooks: -antigen-load-source-cached
+[WRN][1526827762.2622771263] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2622771263] Replace hook: -antigen-load-source-cached /home/trevor/.antigen/bundles/zsh-users/zsh-syntax-highlighting///zsh-syntax-highlighting.plugin.zsh
+[WRN][1526827762.2623517513] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2623517513] Replaced hooked function.
+[LOG][1526827762.2624015808] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2624015808] Return from hook -antigen-load-source with 0
+[LOG][1526827762.2624993324] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2624993324] Return from hook antigen-bundle with 0
+[WRN][1526827762.2626366615] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2626366615] Updated meta: target antigen-bundle mode repeat type pre called 17
+[WRN][1526827762.2626929283] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2626929283] Processing hooks: antigen-bundle-cached
+[WRN][1526827762.2627398968] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827762.2627398968] Pre hook: antigen-bundle-cached colored-man-pages
+[WRN][1526827762.2628173828] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827762.2628173828] -antigen-hook-antigen-bundle colored-man-pages
+[TRA][1526827762.2628686428] /home/trevor/.zsh/zsh/share/antigen.zsh:1456
+[TRA][1526827762.2628686428] Called antigen-bundle with colored-man-pages BUNDLE
+[TRA][1526827762.2628686428] TRACE
+-antigen-hook-antigen-bundle
+-antigen-hook-handler
+antigen-bundle
+antigen-bundle-parallel-execute
+antigen-apply-parallel-execute
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827762.2634000778] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2634000778] Updated meta: target -antigen-load-env mode repeat type replace called 5
+[WRN][1526827762.2634661198] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2634661198] Processing hooks: -antigen-load-env-cached
+[WRN][1526827762.2635376453] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2635376453] Replace hook: -antigen-load-env-cached dir /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh btype plugin url https://github.com/robbyrussell/oh-my-zsh.git loc plugins/colored-man-pages name robbyrussell/oh-my-zsh make_local_clone true
+[WRN][1526827762.2636458874] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2636458874] Replaced hooked function.
+[LOG][1526827762.2636966705] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2636966705] Return from hook -antigen-load-env with 0
+[WRN][1526827762.2638516426] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2638516426] Updated meta: target -antigen-load-source mode repeat type replace called 5
+[WRN][1526827762.2639207840] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2639207840] Processing hooks: -antigen-load-source-cached
+[WRN][1526827762.2639830112] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2639830112] Replace hook: -antigen-load-source-cached /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+[WRN][1526827762.2640569210] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2640569210] Replaced hooked function.
+[LOG][1526827762.2641112804] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2641112804] Return from hook -antigen-load-source with 0
+[LOG][1526827762.2642092705] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2642092705] Return from hook antigen-bundle with 0
+[WRN][1526827762.2643473148] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2643473148] Updated meta: target antigen-bundle mode repeat type pre called 18
+[WRN][1526827762.2644047737] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2644047737] Processing hooks: antigen-bundle-cached
+[WRN][1526827762.2644517422] /home/trevor/.zsh/zsh/share/antigen.zsh:1505
+[WRN][1526827762.2644517422] Pre hook: antigen-bundle-cached --loc=themes/powerlevel9k --btype=theme
+[WRN][1526827762.2645299435] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827762.2645299435] -antigen-hook-antigen-bundle --loc=themes/powerlevel9k --btype=theme
+[TRA][1526827762.2645809650] /home/trevor/.zsh/zsh/share/antigen.zsh:1456
+[TRA][1526827762.2645809650] Called antigen-bundle with --loc=themes/powerlevel9k --btype=theme BUNDLE
+[TRA][1526827762.2645809650] TRACE
+-antigen-hook-antigen-bundle
+-antigen-hook-handler
+antigen-bundle
+antigen-bundle-parallel-execute
+antigen-apply-parallel-execute
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[WRN][1526827762.2651350498] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2651350498] Updated meta: target -antigen-load-env mode repeat type replace called 6
+[WRN][1526827762.2652006149] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2652006149] Processing hooks: -antigen-load-env-cached
+[WRN][1526827762.2652716637] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2652716637] Replace hook: -antigen-load-env-cached dir /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh btype theme url https://github.com/robbyrussell/oh-my-zsh.git loc themes/powerlevel9k.zsh-theme name robbyrussell/oh-my-zsh make_local_clone true
+[WRN][1526827762.2653794289] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2653794289] Replaced hooked function.
+[LOG][1526827762.2654292583] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2654292583] Return from hook -antigen-load-env with 0
+[WRN][1526827762.2655775547] /home/trevor/.zsh/zsh/share/antigen.zsh:1487
+[WRN][1526827762.2655775547] Updated meta: target -antigen-load-source mode repeat type replace called 6
+[WRN][1526827762.2656393051] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2656393051] Processing hooks: -antigen-load-source-cached
+[WRN][1526827762.2657003403] /home/trevor/.zsh/zsh/share/antigen.zsh:1516
+[WRN][1526827762.2657003403] Replace hook: -antigen-load-source-cached
+[WRN][1526827762.2657666206] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.2657666206] Replaced hooked function.
+[LOG][1526827762.2658154964] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2658154964] Return from hook -antigen-load-source with 0
+[LOG][1526827762.2659127712] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.2659127712] Return from hook antigen-bundle with 0
+[WRN][1526827762.2659797668] /home/trevor/.zsh/zsh/share/antigen.zsh:1757
+[WRN][1526827762.2659797668] Parallel install done PARALLEL
+[WRN][1526827762.2661807537] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827762.2661807537] Ignoring hook due to mode once: antigen-apply-lock
+[WRN][1526827762.2662448883] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827762.2662448883] Ignoring hook due to mode once: antigen-apply-parallel
+[WRN][1526827762.2663064003] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827762.2663064003] Ignoring hook due to mode once: antigen-apply-defer
+[WRN][1526827762.2663674355] /home/trevor/.zsh/zsh/share/antigen.zsh:1480
+[WRN][1526827762.2663674355] Ignoring hook due to mode once: antigen-apply-cached
+[WRN][1526827762.2664155960] /home/trevor/.zsh/zsh/share/antigen.zsh:1502
+[WRN][1526827762.2664155960] Processing hooks: antigen-apply-lock antigen-apply-parallel antigen-apply-defer antigen-apply-cached
+[WRN][1526827762.2664756775] /home/trevor/.zsh/zsh/share/antigen.zsh:1523
+[WRN][1526827762.2664756775] -antigen-hook-antigen-apply 
+[LOG][1526827762.2665262222] /home/trevor/.zsh/zsh/share/antigen.zsh:1456
+[LOG][1526827762.2665262222] Called antigen-apply
+[TRA][1526827762.2665705681] /home/trevor/.zsh/zsh/share/antigen.zsh:1457
+[TRA][1526827762.2665705681] Gonna create compdump file @ apply COMPDUMP
+[TRA][1526827762.2665705681] TRACE
+-antigen-hook-antigen-apply
+-antigen-hook-handler
+antigen-apply
+antigen-apply-parallel-execute
+-antigen-hook-handler
+antigen-apply
+-antigen-hook-antigen
+-antigen-hook-handler
+antigen
+/home/trevor/.zshrc
+[LOG][1526827762.4733507633] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.4733507633] Return from hook antigen-apply with 0
+[WRN][1526827762.4735498428] /home/trevor/.zsh/zsh/share/antigen.zsh:1527
+[WRN][1526827762.4735498428] Replaced hooked function.
+[WRN][1526827762.4736156464] /home/trevor/.zsh/zsh/share/antigen.zsh:1531
+[WRN][1526827762.4736156464] Post hook: antigen-apply-lock
+[WRN][1526827762.4736762047] /home/trevor/.zsh/zsh/share/antigen.zsh:1694
+[WRN][1526827762.4736762047] Freeing antigen-lock file at /home/trevor/.antigen/.lock
+[WRN][1526827762.4751138687] /home/trevor/.zsh/zsh/share/antigen.zsh:1531
+[WRN][1526827762.4751138687] Post hook: antigen-apply-cached
+[LOG][1526827762.4752042294] /home/trevor/.zsh/zsh/share/antigen.zsh:1912
+[LOG][1526827762.4752042294] TRACE: /home/trevor/.zsh/zsh/share/antigen.zsh:1532 /home/trevor/.zsh/zsh/share/antigen.zsh:1459 /home/trevor/.zsh/zsh/share/antigen.zsh:1465 /home/trevor/.zsh/zsh/share/antigen.zsh:1524 /home/trevor/.zsh/zsh/share/antigen.zsh:1459 /home/trevor/.zshrc:131 zsh:0
+[LOG][1526827762.4755918980] /home/trevor/.zsh/zsh/share/antigen.zsh:1805
+[LOG][1526827762.4755918980] Gonna generate cache for /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/bzr.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/clipboard.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/compfix.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/completion.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/correction.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/diagnostics.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/directories.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/functions.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/git.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/grep.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/history.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/key-bindings.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/misc.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/nvm.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/prompt_info_functions.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/spectrum.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/termsupport.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/lib/theme-and-appearance.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git/git.plugin.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh /home/trevor/.antigen/bundles/zsh-users/zsh-syntax-highlighting// /home/trevor/.antigen/bundles/zsh-users/zsh-syntax-highlighting///zsh-syntax-highlighting.plugin.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/colored-man-pages /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh /home/trevor/.antigen/bundles/robbyrussell/oh-my-zsh/themes/powerlevel9k.zsh-theme
+[LOG][1526827762.4812283516] /home/trevor/.zsh/zsh/share/antigen.zsh:1863
+[LOG][1526827762.4812283516] CHECK_FILES /home/trevor/.zshrc /home/trevor/.zshrc
+[LOG][1526827762.5531780720] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.5531780720] Return from hook antigen-apply with 0
+[LOG][1526827762.5533366203] /home/trevor/.zsh/zsh/share/antigen.zsh:1536
+[LOG][1526827762.5533366203] Return from hook antigen with 0

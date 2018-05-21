@@ -1,0 +1,46 @@
+conky.config = {
+    update_interval=1,
+    background=false,
+    text_buffer_size=2048,
+    double_buffer=true,
+    no_buffers=true,
+    use_xft=true,
+    font='monospace:pixelsize=11',
+    draw_shades=false,
+    override_utf8_locale=true,
+    own_window=true,
+    --own_window_type='desktop',
+    own_window_type='override',
+    own_window_class='Conky',
+    own_window_transparent=true,
+    own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_colour='#000000',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+    draw_graph_borders=false,
+	minimum_width = 700, minimum_height = 450,
+	maximum_width = 700,
+	alignment = 'top_left',
+	gap_x = 334,
+    gap_y = 149,
+	default_color = '#494b5a',
+	lua_load = '~/.config/conky/conky_sensors.lua',
+	lua_draw_hook_pre = 'conky_sensors_rings',
+};
+
+conky.text = [[
+${voffset 17}${goto 465}Core
+${goto 475}1
+${voffset 17}${goto 525}Core
+${goto 535}2
+${voffset 37}${goto 565}Core
+${goto 575}3
+${voffset 40}${goto 590}Core
+${goto 600}4
+
+${voffset -42}${goto 87}CPU 0:
+${goto 87}${exec sensors -f | grep 'Core 0' | awk '{print $3}' | sed 's/+//g'}
+${voffset 20}${goto 580}CPU 1:
+${goto 580}${exec sensors -f | grep 'Core 1' | awk '{print $3}' | sed 's/+//g'}
+${font}
+]];

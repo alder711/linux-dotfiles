@@ -1,0 +1,103 @@
+conky.config = {
+    -- Conky settings -- #
+    background = true,
+    update_interval = 1,
+
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+
+    override_utf8_locale = true,
+    font='DejaVuSansMono Nerd Font:style=Book:pixelsize=11',
+
+    double_buffer = true,
+    no_buffers = true,
+
+    text_buffer_size = 32768,
+    imlib_cache_size = 0,
+
+    -- Window specifications -- #
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'override',
+
+    own_window_transparent = true,
+    own_window_argb_value = 0,
+
+    own_window_argb_visual = true,
+    -- own_window_argb_value = 120,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_colour = '#000000',
+
+    minimum_width = 275,
+    maximum_width = 300,
+    minimum_height = 550,
+
+    border_inner_margin = 20,
+    border_outer_margin = 0,
+    alignment = 'middle_left',
+
+    gap_x = 1020,
+    gap_y = 10,
+
+-- -- Graphics settings -- #
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+
+    use_xft = true,
+    xftalpha = 0.8,
+    uppercase = false,
+    default_color = '#FFFFFF',
+
+    temperature_unit = "fahrenheit",
+
+    default_color = '#494a5b', --dark gray-blue text
+    color2 = '#565C46',        --dark yellow titles
+    color3 = '#555',           --dark gray workers
+    color4 = '#DD3A21',        --red graph
+    color5 = '#zzzzzz'         --blue graph
+};
+
+conky.text = [[
+${color2}${font FontAwesome:style=Regular:size=30}${font} ${voffset -23}${color}${font FontAwesome:size=10} ${font}${uptime} 
+${goto 52}${font FontAwesome:size=10} ${font}${time} 
+${goto 52}${font FontAwesome:size=10} ${font}Phoenix: ${goto 147}${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ kdvt temperature} F ${goto 190}${font FontAwesome:size=10} ${font}[${battery_short}]
+${goto 52}${font FontAwesome:size=10} ${font}Sacramento: ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ ksmf temperature} F ${goto 190}${font FontAwesome:size=10} ${font}${execpi 1 if [ $(pulseaudio-ctl full-status | awk '{print $2}') = "yes" ]; then echo "M"; fi} ${execpi 1 pulseaudio-ctl full-status | awk '{print $1}'}% 
+${hr 2}
+${font}Artix Linux - ${execpi 60 uname -a | awk '{print $3}'}
+[${execpi 3600 checkupdates | wc -l}] repo packages to update.
+[${execpi 3600 pacaur -Qu | wc -l}] aur packages to update.
+${color2}${font FontAwesome:size=10}${font} ${rss https://www.archlinux.org/feeds/news/ 30 item_title 1}
+${color2}${font FontAwesome:size=10}${goto 70}${font}ETH${goto 190}${font}WLAN${color}
+${goto 35}${font FontAwesome:size=10} ${font}${goto 70}${upspeed eth1}${goto 190}${upspeed wlan0}
+${goto 35}${upspeedgraph wlan0 170000 565C46}
+${goto 35}${font FontAwesome:size=10} ${font}${goto 70}${downspeed eth1}${goto 190}${downspeed wlan0}
+${goto 35}${downspeedgraph wlan0 170000 565C46}
+${goto 35}${font FontAwesome:size=10} ${font}${goto 70}${addrs eth1}
+${goto 190}${addrs wlan0}
+${goto 35}${font FontAwesome:size=10} ${font}${goto 70}${addrs ham0}
+${goto 35}${font FontAwesome:size=10} ${font}${goto 70}${addrs tun0}
+${goto 35}${font FontAwesome:size=10} ${font}${goto 70}${wireless_essid wlan0} : ${wireless_link_qual wlan0}%${goto 190}
+${color2}${font FontAwesome:size=10} ${font}${execi 60 sh ~/.config/conky/wanip.sh}${color}
+${color2}${font FontAwesome:size=10} ${font}STORAGE${color}
+${goto 35}${font FontAwesome:size=10} ${font}${goto 85}Root: ${hddtemp /dev/sda} ºC Home: ${hddtemp /dev/sdb} ºC
+${goto 35}${font FontAwesome:size=10} ${font}${goto 85}Root:${goto 130}${fs_bar 7,75 /}${goto 225}${fs_free_perc /}%
+${goto 35}${font FontAwesome:size=10} ${font}${goto 85}Home:${goto 130}${fs_bar 7,75 /home/trevor}${goto 225}${fs_free_perc /home/trevor}%
+${goto 35}Reading Root: ${goto 160} Writing Root:
+${goto 35}${diskio_read /dev/sda}${goto 168}${diskio_write /dev/sda}
+${goto 35}${diskiograph_read /dev/sda 20,80 030217 120B7A}${goto 168}${diskiograph_write /dev/sda 20,80 170000 730202}
+${goto 35}Reading Extra: ${goto 160} Writing Extra: 
+${goto 35}${diskio_read /dev/sdb}${goto 168}${diskio_write /dev/sdb}
+${goto 35}${diskiograph_read /dev/sdb 20,80 030217 120B7A}${goto 168}${diskiograph_write /dev/sdb 20,80 170000 730202}
+${color2}${font FontAwesome:size=10} ${font}CPU${goto 120}${font FontAwesome:size=10} ${font}MEMORY${color}${font}
+${goto 35}${cpu cpu0}%${goto 70}${cpugraph cpu0 10,40}${goto 135}RAM:${goto 175}$memperc%${goto 210}${memgraph 10,40 #000000 #FFFFFF}
+${goto 35}${cpu cpu1}%${goto 70}${cpugraph cpu1 10,40}${goto 135}SWAP:${goto 175}$swapperc%${goto 210}${swapbar 7,40}
+${goto 35}${cpu cpu2}%${goto 70}${cpugraph cpu2 10,40}
+${goto 35}${cpu cpu3}%${goto 70}${cpugraph cpu3 10,40}
+${color2}${font FontAwesome:size=10} ${font}PROCESSES
+${goto 35}Name ${goto 150}PID${goto 205}CPU${goto 245}MEM${color}
+${color3}${goto 35}${top name 1} ${goto 150}${top pid 1}${goto 190}${top cpu 1}${goto 230}${top mem 1}
+${color3}${goto 35}${top name 2} ${goto 150}${top pid 2}${goto 190}${top cpu 2}${goto 230}${top mem 2}
+${color3}${goto 35}${top name 3} ${goto 150}${top pid 3}${goto 190}${top cpu 3}${goto 230}${top mem 3}
+]];
