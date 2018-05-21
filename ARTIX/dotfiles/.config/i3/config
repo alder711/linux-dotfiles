@@ -55,10 +55,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 # keybind orientation
 set $mode_orientation Orientation (u) up, (l) left, (r) right, (d) down
 mode "$mode_orientation" {
-	bindsym r  exec --no-startup-id "/usr/bin/xrandr -o 3", mode "default"  #&& xsetwacom set "$stylus"
-	bindsym u  exec --no-startup-id "/usr/bin/xrandr -o 0", mode "default"
-	bindsym l  exec --no-startup-id "/usr/bin/xrandr -o 1", mode "default"
-	bindsym d  exec --no-startup-id "/usr/bin/xrandr -o 2", mode "default"
+	bindsym r  exec --no-startup-id "/home/trevor/bin/orientation.sh right", mode "default"
+	bindsym u  exec --no-startup-id "~/bin/orientation.sh up", mode "default"
+	bindsym l  exec --no-startup-id "~/bin/orientation.sh left", mode "default"
+	bindsym d  exec --no-startup-id "~/bin/orientation.sh down", mode "default"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
