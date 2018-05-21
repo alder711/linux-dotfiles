@@ -33,6 +33,8 @@ exec xautolock -time 10 -locker '~/.config/i3/lock.sh ~/.config/i3/lock.png'
 exec feh --bg-scale ~/.config/i3/background.png
 exec ~/.config/conky/gif_display.sh ~/.config/conky/quark.gif
 
+
+
 # keybind to lock immediately
 bindsym Control+$mod+Delete exec xautolock -locknow
 
@@ -49,6 +51,23 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 # brightness keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+# keybind orientation
+set $mode_orientation Orientation (u) up, (l) left, (r) right, (d) down
+mode "$mode_orientation" {
+	bindsym r  exec --no-startup-id "/usr/bin/xrandr -o 3", mode "default"  #&& xsetwacom set "$stylus"
+	bindsym u  exec --no-startup-id "/usr/bin/xrandr -o 0", mode "default"
+	bindsym l  exec --no-startup-id "/usr/bin/xrandr -o 1", mode "default"
+	bindsym d  exec --no-startup-id "/usr/bin/xrandr -o 2", mode "default"
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+# bind power menu
+bindsym XF86Launch1 mode "$mode_orientation"
+
+
 
 # touchpad
 #bindsym XF86TouchpadToggle exec <command>
@@ -224,6 +243,7 @@ mode "$mode_system" {
 }
 # bind power menu
 bindsym $mod+Escape mode "$mode_system"
+
 
 
 
