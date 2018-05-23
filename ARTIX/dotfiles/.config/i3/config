@@ -49,8 +49,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # brightness keys
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec "sudo ~/bin/backlightctl.sh up"
+#bindsym XF86WakeUp+Home exec sudo ~/bin/backlightctl.sh up
+bindsym XF86MonBrightnessDown exec "sudo ~/bin/backlightctl.sh down"
+#bindsym XF86WakeUp+End  exec sudo ~/bin/backlightctl.sh down
 
 # keybind orientation
 set $mode_orientation Orientation (u) up, (l) left, (r) right, (d) down
