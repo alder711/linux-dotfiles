@@ -32,4 +32,34 @@ case "$1" in
 		/usr/bin/xsetwacom set "$STYLUS" Rotate half && \
 		/usr/bin/xsetwacom set "$FINGER" Rotate half && \
 		/usr/bin/xsetwacom set "$ERASER" Rotate half
+		;;
+
+	"toggle")
+		# Get the current orientation of the tablet
+		rotate=$(xsetwacom get "$STYLUS" Rotate)
+		
+		# Work out the next tablet and screen orientations (rotating clockwise)
+		case "$rotate" in
+		    none) nextRotate="cw"
+		          nextOrient="right" ;;
+		    cw)   nextRotate="half"
+		          nextOrient="inverted" ;;
+		    half) nextRotate="ccw"
+		          nextOrient="left" ;;
+		    ccw)  nextRotate="none"
+		          nextOrient="normal" ;;
+		esac
+		
+		# Rotate the screen
+		/usr/bin/xrandr -o $nextOrient #&& \
+		/usr/bin/xsetwacom set "$STYLUS" Rotate $nextRotate
+		/usr/bin/xsetwacom set "$FINGER" Rotate $nextRotate
+		/usr/bin/xsetwacom set "$ERASER" Rotate $nextRotate
+
+		echo "NextRotate=$nextRotate | NextOrient=$nextOrient"
+
+		;;
+
+	*)
+		echo "Unknown option, use <up|down|left|right|toggle>"
 esac

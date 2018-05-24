@@ -69,6 +69,10 @@ mode "$mode_orientation" {
 # bind power menu
 bindsym XF86Launch1 mode "$mode_orientation"
 
+#bindsym XF86RotateWindows exec --no-startup-id /home/trevor/bin/orientation.sh toggle
+bindsym XF86Eject exec --no-startup-id /home/trevor/bin/orientation.sh toggle
+#bindsym XF86RotateWindows exec --no-startup-id "source '/home/trevor/bin/orientation.sh' toggle"
+
 
 
 # touchpad
