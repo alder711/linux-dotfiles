@@ -46,7 +46,8 @@ smart_gaps on
 # volume keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioMicMute     exec --no-startup-id amixer set Capture toggle
 
 # brightness keys
 bindsym XF86MonBrightnessUp exec "sudo ~/bin/backlightctl.sh up"
@@ -69,9 +70,13 @@ mode "$mode_orientation" {
 # bind power menu
 bindsym XF86Launch1 mode "$mode_orientation"
 
+exec sudo setkeycodes 6c 161 && sudo udevadm trigger
+#exec sudo setkeycodes 75 161
 #bindsym XF86RotateWindows exec --no-startup-id /home/trevor/bin/orientation.sh toggle
+#bindsym XF86Phone exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 bindsym XF86Eject exec --no-startup-id /home/trevor/bin/orientation.sh toggle
-#bindsym XF86RotateWindows exec --no-startup-id "source '/home/trevor/bin/orientation.sh' toggle"
+#bindsym XF86RotateWindows exec --no-startup-id /home/trevor/bin/orientation.sh toggle
+#bindcode 161 exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 
 
 
