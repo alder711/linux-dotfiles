@@ -9,6 +9,11 @@ syntax on
 " Enable line numbering
 set number
 
+" No beeps!
+"set noerrorbells
+"set novisualbell
+set noerrorbells visualbell
+
 " Reuse same window and switch from an unsaved buffer without saving
 " first; keep an undo history for multiple files when reusing same
 " window
