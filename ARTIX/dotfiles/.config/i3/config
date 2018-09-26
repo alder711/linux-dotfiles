@@ -84,6 +84,10 @@ bindsym XF86Eject exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 #bindcode 161 exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 
 
+# Start NetworkManager tray applet
+exec nm-applet
+
+
 
 # Start Kalu, a package update tracker
 exec --no-startup-id kalu
