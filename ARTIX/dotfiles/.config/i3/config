@@ -108,7 +108,37 @@ exec sleep 3 && ~/.config/conky/startup_i3.sh
 
 # Toggle borders
 bindsym $mod+b border toggle
+bindsym $mod+t border normal
+bindsym $mod+y border pixel 3
+bindsym $mod+u border none
+# Set default border for new windows
+default_border pixel 3
+default_floating_border pixel 3
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #646591 #ffffff #2e9ef4   #646591
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #46454f #888888 #292d2e   #46454f
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# Default colors
+# class                 border  backgr. text    indicator child_border
+#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+#client.background       #ffffff
+
+
+
+
+# Focus follow mouse?
+focus_follows_mouse yes
+
+# Default orientation
+default_orientation horizontal
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
