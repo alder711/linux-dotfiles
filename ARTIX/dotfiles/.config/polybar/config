@@ -24,9 +24,11 @@ background-alt = #3b3c44
 foreground = #9c9fec
 foreground-alt = #555555
 primary = #252847 
-secondary = #29244c
+;used for notify (muted volume)
+secondary = #f78c99 
 underline = #383960
-alert = #646591
+;used for criticality (temp too high)
+alert = #5c366b 
 
 [global/wm]
 margin-top = 5
