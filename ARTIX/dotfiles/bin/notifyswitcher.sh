@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # AUTHOR: 	Trevor Bautista
-# VERSION:	0.1 as of 25 September 2018
+# VERSION:	0.2 as of 26 September 2018
 # DESCRIPTION:	This script is basically a mediator between
 #		xfce4-notifyd and dunst. The xfce4-notifyd 
 #		hogs the dbus so that dunst cannot use it,
@@ -11,9 +11,6 @@
 #		stopping of the xfce4-notifyd process so dunst takes
 #		over. 
 #
-#		NOTE: This script at the moment does not start/restart
-#		any dunst or xfce4-notifyd processes. Thus, when switching
-#		to xfce4-notifyd, a restart is recommended.
 ###########################################################################
 
 
@@ -25,6 +22,8 @@
 #	echo "Error";
 #fi
 
+
+DUNST_ARGS=""
 
 
 function switch_to_dunst()
@@ -52,7 +51,9 @@ function switch_to_dunst()
 				echo "[I] Killing xfce4-notifyd process...";
 				# Kill XFCE notify process
 				pkill xfce4-notifyd;
-
+				# Start dunst
+				echo "[I] Starting dunst...";
+				dunst $DUNST_ARGS;
 				echo "[I] Switched to dunst: Done!";
 			# If non-empty storage location for file contents,
 			else
@@ -66,32 +67,39 @@ function switch_to_dunst()
 
 function switch_to_xfce()
 {
-	# If non-empty storage location for file contents,
-	if ! [[ "$(awk -v n=4 '/XFCE_CONFIG:/ && !--n {getline; getline; print; exit}' $0)" == "XFCE_CONFIG:" ]]; then
-		# If XFCE config for dbus does not exist,
-		if ! [ -e /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service ]; then
-			echo "[I] Tracking locaton of file to restore config from..."
-			# Find the location in this file to get config from
-			XFCE_payload_offset=$(($(grep -na -m1 "^XFCE_CONFIG:$" $0|cut -d':' -f1) + 1));
-			echo "[I] Pushing found config to XFCE dbus config file..."
-			# Push config to file
-			( tail -n +$XFCE_payload_offset $0 > /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service ) && \
-			echo "[I] Removing old config informaton from file..." && \
-			# Remove config
-			head -$(($XFCE_payload_offset-1)) $0 > $0.tmp && \
-			mv $0.tmp $0 && \
-			chmod a+x $0;
-			echo "Killing dunst and starting the xfce4-notifyd process...";
-			# Attempt to kill dunst and start xfce4-notifyd daemon
-			#pkill dunst;
-			#/usr/lib/xfce4/notifyd/xfce4-notifyd &
-			echo "[I] Switched to xfce4-notifyd: done!";
-		# If XFCE dbus config exists,
-		else
-			echo "[E] XFCE config already exists for dbus! Stopping...";
-		fi
+	if ! [ -e /usr/lib/xfce4/notifyd/xfce4-notifyd ]; then
+		echo "[E] No executable! Stopping...";
 	else
-		echo "[E] Empty storage location in file! Stopping...";
+		echo "[I] Switching to xfce4-notifyd...";
+		# If non-empty storage location for file contents,
+		if ! [[ "$(awk -v n=4 '/XFCE_CONFIG:/ && !--n {getline; getline; print; exit}' $0)" == "XFCE_CONFIG:" ]]; then
+			# If XFCE config for dbus does not exist,
+			if ! [ -e /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service ]; then
+				echo "[I] Tracking locaton of file to restore config from..."
+				# Find the location in this file to get config from
+				XFCE_payload_offset=$(($(grep -na -m1 "^XFCE_CONFIG:$" $0|cut -d':' -f1) + 1));
+				echo "[I] Pushing found config to XFCE dbus config file..."
+				# Push config to file
+				( tail -n +$XFCE_payload_offset $0 > /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service ) && \
+				echo "[I] Removing old config informaton from file..." && \
+				# Remove config
+				head -$(($XFCE_payload_offset-1)) $0 > $0.tmp && \
+				mv $0.tmp $0 && \
+				chmod a+x $0;
+				echo "[I] Killing dunst...";
+				# Attempt to kill dunst
+				pkill dunst;
+				echo "[I] Starting the xfce4-notifyd process...";
+				# Attempt to start the xfce4-notifyd process
+				/usr/lib/xfce4/notifyd/xfce4-notifyd &
+				echo "[I] Switched to xfce4-notifyd: done!";
+			# If XFCE dbus config exists,
+			else
+				echo "[E] XFCE config already exists for dbus! Stopping...";
+			fi
+		else
+			echo "[E] Empty storage location in file! Stopping...";
+		fi
 	fi
 }
 

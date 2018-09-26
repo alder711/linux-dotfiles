@@ -27,13 +27,14 @@ font pango:monospace 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 # start locker process
-exec xautolock -time 10 -locker '~/.config/i3/lock.sh ~/.config/i3/lock.png' 
+exec xautolock -time 10 -locker '~/.config/i3/lock.sh ~/.config/i3/lock.png'
 
 # set background
 exec feh --bg-scale ~/.config/i3/background.png
 exec ~/.config/conky/gif_display.sh ~/.config/conky/quark.gif
 
-
+# Use dunst
+exec sudo ~/bin/notifyswitcher.sh dunst
 
 # keybind to lock immediately
 bindsym Control+$mod+Delete exec xautolock -locknow
@@ -46,7 +47,10 @@ smart_gaps on
 # volume keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute 0 toggle
+#exec --no-startup-id xmodmap -e "keycode 113 = XF86AudioMute"
+#exec sudo setkeycodes e020 121 e0a0 121 && sudo udevadm trigger
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+#bindcode 113 exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioMicMute     exec --no-startup-id amixer set Capture toggle
 
 # brightness keys
@@ -71,12 +75,18 @@ mode "$mode_orientation" {
 bindsym XF86Launch1 mode "$mode_orientation"
 
 exec sudo setkeycodes 6c 161 && sudo udevadm trigger
+# Kernel adds 8 to keycode for some reason, so 161 -> 169 = XF86Eject
 #exec sudo setkeycodes 75 161
 #bindsym XF86RotateWindows exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 #bindsym XF86Phone exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 bindsym XF86Eject exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 #bindsym XF86RotateWindows exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 #bindcode 161 exec --no-startup-id /home/trevor/bin/orientation.sh toggle
+
+
+
+# Start Kalu, a package update tracker
+exec --no-startup-id kalu
 
 
 
@@ -255,6 +265,8 @@ mode "$mode_system" {
 # bind power menu
 bindsym $mod+Escape mode "$mode_system"
 
+# Use locker for sleep (pm-utils will sleep, this just locks)
+bindsym XF86Sleep exec --no-startup-id $Locker
 
 
 
