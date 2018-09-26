@@ -1,0 +1,253 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+
+
+[colors]
+background = #0b0b1100
+background-alt = #3b3c44
+;foreground = #3d4157
+foreground = #9c9fec
+foreground-alt = #555555
+primary = #252847 
+secondary = #29244c
+underline = #383960
+alert = #646591
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+;------------------------
+[bar/top]
+width = 100%
+height = 23
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+
+border-bottom = 3
+
+spacing = 2
+padding-left = 2
+padding-right = 2
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=8;0
+font-1 = unifont:size=6:heavy:fontformat=truetype;-2
+font-2 = siji:pixelsize=10;0
+font-3 = FontAwesome:pixelsize=10;0
+font-4 = RobotoMono Nerd Font:pixelsize=10;1
+
+modules-left = i3 xwindow
+modules-center = date
+modules-right = eth wlan cpu memory temperature battery backlight volume
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+wm-restack = i3
+
+;override-redirect = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+pin-workspaces = true
+enable-scroll = false
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+format-underline = ${colors.underline}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+pin-workspaces = true
+enable-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+label-focused-foreground = $(colors.underline)
+label-focused-background = ${colors.primary}
+;label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-visible = %index%
+label-visible-background = ${colors.background}
+;label-visible-underline = #383a3b
+label-visible-padding = ${self.label-focused-padding}
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+format = <ramp> <label>
+label =  %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 1.0
+udspeed-minwidth = 3
+
+format-connected = <label-connected>
+label-connected = : %essid% - %signal%%
+ramp-signal-foreground = ${colors.foreground-alt}
+
+;ramp-signal-0 = ﮙ
+;ramp-signal-1 = 
+;ramp-signal-2 = 
+;ramp-signal-3 = 
+;ramp-signal-4 = ﮚ
+;ramp-signal-5 = 
+
+[module/eth]
+type = internal/network
+interface = eth0
+interval = 1.0
+udspeed-minwidth = 3
+
+format-connected = <label-connected>
+label-connected = :  %local_ip%
+ramp-signal-foreground = ${colors.foreground-alt}
+
+;ramp-signal-0 = ﮙ
+;ramp-signal-1 = 
+;ramp-signal-2 = 
+;ramp-signal-3 = 
+;ramp-signal-4 = ﮚ
+;ramp-signal-5 = 
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = " %a, %d %B "
+time = "%H:%M:%S "
+
+format-prefix-foreground = ${colors.background}
+;format-background = ${colors.primary}
+format-foreground = ${colors.foreground}
+format-underline = ${colors.underline}
+label = "%date% %time%"
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = "%percentage%%"
+
+format-muted = <label-muted>
+format-muted-foreground = ${colors.alert}
+label-muted = "[M]"
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+[module/battery]
+type = internal/battery
+;ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+full-at = 100
+
+charging-prefix = 
+format-charging = <animation-charging> <label-charging>
+;format-charging-underline = #ff5555
+
+format-discharging = <ramp-capacity><label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix-foreground = ${colors.foreground}
+;format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+
+animation-charging-0 = 
+animation-charging-1 =  
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 80
+
+format = <ramp><label>
+;format-underline = #ff5555
+format-warn = <ramp><label-warn>
+;format-warn-underline = ${self.format-underline}
+
+label = %temperature-f%
+label-warn = %temperature-f%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+label =  %percentage%%
+;format-underline = #ff5555
+
+[module/memory]
+type = internal/memory
+interval = 1
+label =  %percentage_used%%
+
+[settings]
+screenchange-reload = true

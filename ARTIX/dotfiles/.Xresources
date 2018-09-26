@@ -29,9 +29,10 @@ URxvt*foreground: white
 
 !!!!!!!!!!!!!! ROFI !!!!!!!!!!!!!!
 !color for certain lines
-rofi.color-window: #222,#222
+!outside borders
+rofi.color-window: #151523,#646591
 !                  bg   fg   bgalt hlbg hlfg
-rofi.color-normal: #111,#999,#444
+rofi.color-normal: #1a1a33,#646591,#212142,#333366
 !rofi.color-active: #333,#333
 !rofi.bg: #333
 !rofi.fg: #666

@@ -12,7 +12,9 @@ set number
 " No beeps!
 "set noerrorbells
 "set novisualbell
-set noerrorbells visualbell
+set noerrorbells 
+set visualbell
+set t_vb=
 
 " Reuse same window and switch from an unsaved buffer without saving
 " first; keep an undo history for multiple files when reusing same

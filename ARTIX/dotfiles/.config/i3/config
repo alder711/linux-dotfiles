@@ -270,56 +270,57 @@ bindsym XF86Sleep exec --no-startup-id $Locker
 
 
 
-
+# Start Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
 #        status_command i3status
 #}
-bar {
-	# bar ID
-	id bar-1
-	# output location (LVDS1 = laptop screen)
-	output		primary
-	# output location for tray icons
-	tray_output	primary
-	# bar font
-	font		misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-	font		pango:DejaVuSansMono Nerd Font 8
-	# separator symbol between bar elements
-	separator_symbol "||"
-	# display status in bar
-	status_command	i3status -c ~/.config/i3status/i3status.conf
-	# bar position
-	position	top
-	# display bar when $mod pressed
-	mode		hide
-	hidden_state	hide
-	modifier	Mod4
-	# toggle displaying of workspace buttons
-	workspace_buttons yes
-	# toggle the stripping of workspace numbers (if 'no', naming is '[n]:[NAME]')
-	strip_workspace_numbers no
-	# up volume when scroll up is initiated
-	#button4		exec <command>
-	# down volume when scroll down is initiated
-	#button5		exec <command>
-	# colors
-	colors {
-		# background color
-		background #000000
-		# status line color
-		statusline #ffffff
-		# separator color
-		separator #666666
-
-		#workspace colors	border  bckgrnd text
-		focused_workspace	#4c7899 #285577 #ffffff
-		active_workspace	#333333 #5f676a #ffffff
-		inactive_workspace	#333333 #222222 #888888
-		urgent_workspace	#2f343a #900000 #ffffff
-		binding_mode		#2f343a #900000 #ffffff
-	}
-
-}
+#bar {
+#	# bar ID
+#	id bar-1
+#	# output location (LVDS1 = laptop screen)
+#	output		primary
+#	# output location for tray icons
+#	tray_output	primary
+#	# bar font
+#	font		misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#	font		pango:DejaVuSansMono Nerd Font 8
+#	# separator symbol between bar elements
+#	separator_symbol "||"
+#	# display status in bar
+#	status_command	i3status -c ~/.config/i3status/i3status.conf
+#	# bar position
+#	position	top
+#	# display bar when $mod pressed
+#	mode		hide
+#	hidden_state	hide
+#	modifier	Mod4
+#	# toggle displaying of workspace buttons
+#	workspace_buttons yes
+#	# toggle the stripping of workspace numbers (if 'no', naming is '[n]:[NAME]')
+#	strip_workspace_numbers no
+#	# up volume when scroll up is initiated
+#	#button4		exec <command>
+#	# down volume when scroll down is initiated
+#	#button5		exec <command>
+#	# colors
+#	colors {
+#		# background color
+#		background #000000
+#		# status line color
+#		statusline #ffffff
+#		# separator color
+#		separator #666666
+#
+#		#workspace colors	border  bckgrnd text
+#		focused_workspace	#4c7899 #285577 #ffffff
+#		active_workspace	#333333 #5f676a #ffffff
+#		inactive_workspace	#333333 #222222 #888888
+#		urgent_workspace	#2f343a #900000 #ffffff
+#		binding_mode		#2f343a #900000 #ffffff
+#	}
+#
+#}
