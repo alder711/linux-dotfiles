@@ -114,6 +114,7 @@ else
 	# Spacing
 	POWERLEVEL9K_PROMPT_ON_NEWLINE=true			#actual prompt is on next line
 	POWERLEVEL9K_PROMPT_ADD_NEWLINE=true			#add newline before next prompt
+	POWERLEVEL9K_RPROMPT_ON_NEWLINE=true			#put right prompt on newline
 	
 	# Element customizations
 	POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'			#time format
@@ -124,8 +125,8 @@ else
 	#POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{blue} $(print_icon 'HOME_ICON') %F{black}"
 	
 	# Prompt
-	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
-	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable)
+	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs status root_indicator background_jobs history time)
 	
 	# Apply Antigen settings
 	antigen apply
@@ -172,7 +173,7 @@ alias ls='ls --color=auto'
 alias multimc=multimc5
 alias chirp="sudo chirpw"
 alias ltspice="/usr/bin/wine '/home/trevor/.wine/drive_c/Program Files/LTspiceXVII/XVIIx64.exe'"
-alias su="su-p"
+alias su="su -p"
 alias sudo="sudo -E"
 
 
