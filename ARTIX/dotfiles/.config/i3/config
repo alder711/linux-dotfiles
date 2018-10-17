@@ -98,9 +98,12 @@ exec --no-startup-id kalu
 #bindsym XF86TouchpadToggle exec <command>
 
 # media controls
-bindsym $mod+Shift+p exec playerctl play-pause
-bindsym $mod+Shift+comma exec playerctl previous
-bindsym $mod+Shift+period exec playerctl next
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym $mod+Shift+p exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym $mod+Shift+comma exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym $mod+Shift+period exec --no-startup-id playerctl next
 
 # start compton compositor
 exec compton -f --backend glx --vsync opengl-swc --config ~/.config/compton/compton.conf
