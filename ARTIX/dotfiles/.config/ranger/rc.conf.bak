@@ -1,0 +1,15 @@
+
+# show hidden files in ranger (toggle by typing 'zh')
+set show_hidden true
+
+# show image previews (w3m) (use ASCII instead if false)
+set preview_images false
+# Use an ASCII previewer
+set use_preview_script true
+set preview_script ~/.config/ranger/scope.sh
+# a plugin that adds file glyphs / icon support to Ranger:
+# https://github.com/alexanderjeurissen/ranger_devicons
+default_linemode devicons
+
+# be version control aware
+set vcs_aware true
