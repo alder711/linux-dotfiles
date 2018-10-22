@@ -79,7 +79,7 @@ exec sudo setkeycodes 6c 161 && sudo udevadm trigger
 #exec sudo setkeycodes 75 161
 #bindsym XF86RotateWindows exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 #bindsym XF86Phone exec --no-startup-id /home/trevor/bin/orientation.sh toggle
-bindsym XF86Eject exec --no-startup-id /home/trevor/bin/orientation.sh toggle
+bindsym XF86Eject exec --no-startup-id /home/trevor/bin/orientation.sh toggle && sleep 1
 #bindsym XF86RotateWindows exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 #bindcode 161 exec --no-startup-id /home/trevor/bin/orientation.sh toggle
 
